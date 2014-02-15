@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<!-- Read Meter, should appear as action button -->
+    <item android:id="@+id/action_read_meter"
+          android:icon="@drawable/ic_action_read_meter"
+          android:title="@string/action_read_meter"
+          android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_logout"/>
+
+</menu>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Energize</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="email_hint">your.email@domain.com</string>
+    <string name="password_hint">Password</string>
+    <string name="password_confirm_hint">Confirm Password</string>
+    <string name="button_register">Register</string>
+    <string name="button_login">Login</string>
+    
+    
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+     
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Dashboard</item>
+        <item >Energy Usage</item>
+        <item >Energy Savings</item>
+        <item >My Hood</item>
+        <item >Safety Tips</item>
+        <item >Saving Tips</item>
+    </string-array>
+     
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_dashboard</item>
+        <item>@drawable/ic_usage</item>
+        <item>@drawable/ic_savings</item>
+        <item>@drawable/ic_community</item>
+        <item>@drawable/ic_tips_safety</item>
+        <item>@drawable/ic_tips_saving</item>
+    </array>
+    
+    <!-- Actionbar Menu -->
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_read_meter">Read Meter</string>
+     
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+</resources>
