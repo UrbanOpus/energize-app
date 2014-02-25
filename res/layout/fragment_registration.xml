@@ -148,7 +148,7 @@
 	    android:layout_height="wrap_content"
 	    android:gravity="center"
 	    android:hint="@string/password_hint"
-	    android:inputType="textVisiblePassword" />
+	    android:inputType="textPassword"/>
     
     <EditText
 	    android:id="@+id/password_confirm"
@@ -156,7 +156,7 @@
 	    android:layout_height="wrap_content"
 	    android:gravity="center"
 	    android:hint="@string/password_confirm_hint"
-	    android:inputType="textVisiblePassword" />
+	    android:inputType="textPassword"/>
     
     <TextView
 	    android:id="@+id/error_registration"

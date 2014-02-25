@@ -131,8 +131,8 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 		                "Registering. One moment please...", true);
 			} else {
 				showDialog("Password does not match.");
-				((EditText)findViewById(R.id.password)).clearComposingText();
-				((EditText)findViewById(R.id.password_confirm)).clearComposingText();
+				((EditText)findViewById(R.id.password)).setText("");
+				((EditText)findViewById(R.id.password_confirm)).setText("");
 			}
 		} else {
 			showNoConnection();

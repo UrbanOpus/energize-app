@@ -119,7 +119,8 @@
 				    android:layout_height="wrap_content"
 				    android:hint="@string/password_hint"
 				    android:gravity="center"
-				    android:inputType="textVisiblePassword" />
+				    android:inputType="textPassword"
+				    android:password="true" />
 		    
 		   <TextView
 			    android:id="@+id/error_login"
