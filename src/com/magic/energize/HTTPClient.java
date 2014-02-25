@@ -19,6 +19,9 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -52,6 +55,13 @@ public class HTTPClient {
 		}
 	}
 	
+	public static boolean isNetworkAvailable(Context activity) {
+	    ConnectivityManager connectivityManager 
+	          = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+	    return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+	}
+	
 	private static class HttpGETAsyncTask extends AsyncTask<String, Void, String> {
     	private HTTPClientListener listener;
     	private String method;
@@ -59,9 +69,13 @@ public class HTTPClient {
     	public HttpGETAsyncTask(HTTPClientListener listener, String callback_id){
             this.listener=listener;
             method = callback_id;
+            if(!isNetworkAvailable((Context)listener)) {
+            	listener.onRequestCompleted("no-connection", "ERROR");
+            	this.cancel(true);
+            }
         }
-    	
-        @Override
+
+		@Override
         protected String doInBackground(String... urls) {
         	method = urls[1];
             return execute_GET(urls[0]);
@@ -84,6 +98,10 @@ public class HTTPClient {
     	
     	public HttpPOSTAsyncTask(HTTPClientListener listener){
             this.listener=listener;
+            if(!isNetworkAvailable((Context)listener)) {
+            	listener.onRequestCompleted("no-connection", "ERROR");
+            	this.cancel(true);
+            }
         }
     	
         @Override

@@ -2,13 +2,22 @@
 <resources>
 
     <string name="app_name">Energize</string>
-    <string name="hello_world">Hello world!</string>
     
-    <string name="email_hint">your.email@domain.com</string>
-    <string name="password_hint">Password</string>
-    <string name="password_confirm_hint">Confirm Password</string>
+    <!-- Login Page -->
+    <string name="login_header">ENERGIZE</string>
+    <string name="sign_in_title">Sing In To Energize</string>
+    <string name="email_hint">email</string>
+    <string name="password_hint">password</string>
+    <string name="button_login">Sing In</string>
+    <string name="button_forgot_pass">Forgot Password</string>
     <string name="button_register">Register</string>
-    <string name="button_login">Login</string>
+    <string name="chk_login">Keep me logged in</string>
+    <string name="login_terms_text">By tapping "Sign In", you are indicating that you have read &amp; agree to the <u>Privacy Policy &amp; Terms of Service</u>.</string>
+    <string name="register_text">No Account?</string>
+    
+    <!-- Registration Page -->
+    <string name="register_title">Register an Account</string>
+    <string name="password_confirm_hint">confirm password</string>
     
     
     <string name="drawer_open">Slider Menu Opened</string>

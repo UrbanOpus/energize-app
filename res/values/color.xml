@@ -7,4 +7,11 @@
     <color name="list_divider">#272727</color>
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
+    
+    <color name="login_header_background">#7AB331</color>
+    <color name="login_background">#F9ECD5</color>
+    <color name="sign_in_button">#76A170</color>
+    <color name="forgot_pass_button">#738572</color>
+    <color name="register_button">#4F8075</color>
+    
 </resources>
