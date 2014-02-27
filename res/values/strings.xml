@@ -62,6 +62,7 @@
     </array>
     
     <!-- Actionbar Menu -->
+    <string name="action_reminder">Reminder</string>
     <string name="action_settings">Settings</string>
     <string name="action_logout">Logout</string>
     <string name="action_read_meter">Read Meter</string>
