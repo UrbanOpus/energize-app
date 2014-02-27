@@ -14,4 +14,6 @@
     <color name="forgot_pass_button">#738572</color>
     <color name="register_button">#4F8075</color>
     
+    <color name="meter_button">#377349</color>
+    
 </resources>

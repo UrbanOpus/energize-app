@@ -10,5 +10,10 @@
     <dimen name="login_text_small">8dp</dimen>
     <dimen name="login_text_med">15dp</dimen>
     <dimen name="min_button_size">48dp</dimen>
+    
+    <!-- Read Meter -->
+    <dimen name="read_meter_text_size">30dp</dimen>
+    <dimen name="submit_reading_text_size">30dp</dimen>
+    
 
 </resources>

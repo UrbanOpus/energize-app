@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent"
+	android:layout_width="fill_parent"
+	android:layout_marginTop="12dp"
+	android:orientation="vertical"
+	android:weightSum="1"
+	android:background="#F9ECD5">
+	
+    <TextView
+        android:id="@+id/login_header"
+        android:layout_width="fill_parent"
+	    android:layout_height="0dip"
+	    android:layout_weight=".25"
+	    android:gravity="center"
+	    android:text="@string/read_meter_header"
+	    android:textSize="@dimen/read_meter_text_size"
+	    android:textColor="@android:color/white"
+	    android:background="@color/login_header_background"
+	    />
+	
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:paddingLeft="12dp"
+		android:paddingRight="12dp"
+		android:paddingTop="40dp"
+		android:paddingBottom="40dp">
+	  
+	  	<kankan.wheel.widget.WheelView android:id="@+id/first"
+			android:layout_height="wrap_content"
+			android:layout_width="65dp"/>
+		<kankan.wheel.widget.WheelView android:id="@+id/second"
+			android:layout_height="wrap_content"
+			android:layout_width="65dp"/>
+		<kankan.wheel.widget.WheelView android:id="@+id/third"
+			android:layout_height="wrap_content"
+			android:layout_width="65dp"/>
+		<kankan.wheel.widget.WheelView android:id="@+id/fourth"
+			android:layout_height="wrap_content"
+			android:layout_width="65dp"/>
+		<kankan.wheel.widget.WheelView android:id="@+id/fifth"
+			android:layout_height="wrap_content"
+			android:layout_width="65dp"/>
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:id="@+id/spacer"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:layout_weight=".20">
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:id="@+id/meter_bottom_layout"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_gravity="center_horizontal"
+		android:paddingTop="20dp"
+		android:orientation="vertical"
+		android:layout_weight=".60"
+		android:background="#847F77">
+		
+	    <TextView
+	        android:id="@+id/meter_header"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+		    android:gravity="center"
+		    android:text="@string/submit_meter_read"
+		    android:textSize="@dimen/submit_reading_text_size"
+		    android:textColor="@android:color/black"
+		    />
+		
+		<LinearLayout
+		    android:id="@+id/meter_button_layout"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:paddingTop="20dp"
+			android:orientation="horizontal"
+			android:layout_gravity="center_horizontal">
+		
+			<Button
+			    android:id="@+id/button_submit_reading"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_margin="5dp"
+			    android:paddingLeft="8dp"
+			    android:paddingRight="8dp"
+			    android:minHeight="@dimen/min_button_size"
+			    android:text="CONFIRM"
+			    android:textColor="@android:color/white"
+			    android:textSize="@dimen/read_meter_text_size"
+			    android:background="@color/meter_button"
+			    android:onClick="submitReading" />
+			
+			<Button
+			    android:id="@+id/cancle_reading"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_margin="5dp"
+			    android:paddingLeft="8dp"
+			    android:paddingRight="8dp"
+			    android:minHeight="@dimen/min_button_size"
+			    android:text="CANCEL"
+			    android:textColor="@android:color/white"
+			    android:textSize="@dimen/read_meter_text_size"
+			    android:background="@color/meter_button"
+			    android:onClick="cancelReading" />
+		</LinearLayout>
+		
+	</LinearLayout>
+	
+</LinearLayout>

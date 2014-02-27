@@ -29,7 +29,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 	private final String TAG = "Energize.LoginActivity";
 	
 	SharedPreferences prefs;
-	private String energizeUrl = "http://128.189.80.86:3030/api";
+	private String energizeUrl = "http://192.168.0.14:3030/api";
 	
 	//** UI Declarations **/
 	private ProgressDialog mDialog;

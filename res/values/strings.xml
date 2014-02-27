@@ -20,8 +20,25 @@
     <string name="password_confirm_hint">confirm password</string>
     
     
-    <string name="drawer_open">Slider Menu Opened</string>
-    <string name="drawer_close">Slider Menu Closed</string>
+    <!-- Read Meter Page -->
+    <string name="read_meter_header">ENTER METER READING</string>
+    <string name="submit_meter_read">Submit Reading?</string>
+    <string name="utility_prompt">UTILITY TYPE:</string>
+    <string-array name="utility_types">
+        <item>GAS</item>
+        <item>ELECTRIC</item>
+    </string-array>
+    <string name="meter_prompt">METER TYPE:</string>
+    <string-array name="meter_types">
+        <item>CLOCK DIAL</item>
+        <item>DIGITAL</item>
+    </string-array>
+    <string name="units_prompt">METER UNITS:</string>
+    <string-array name="meter_units">
+        <item>IMPERIAL</item>
+        <item>METRIC</item>
+    </string-array>
+    
      
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
@@ -51,4 +68,6 @@
      
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
 </resources>

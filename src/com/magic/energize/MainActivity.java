@@ -1,17 +1,13 @@
 package com.magic.energize;
 
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -23,11 +19,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
  
 interface HTTPClientListener {
@@ -45,6 +46,11 @@ public class MainActivity extends Activity {
 	//** UI Declarations **/
 	//private ProgressDialog mDialog;
 	private InputMethodManager imm;
+	
+	//Meter Settings
+	private String utilityType;
+	private String meterType;
+	private String meterUnits;
 	
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -68,6 +74,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         prefs = getApplicationContext().getSharedPreferences("com.magic.urbanopis.energize", MODE_PRIVATE);
         imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        
+        if(prefs.getString("token", null) == null) {
+    		Intent myIntent = new Intent(this, LoginActivity.class);
+    		startActivity(myIntent);
+        } else {
+        	unregistered_user = false;
+        }
         
         setContentView(R.layout.activity_main);
         
@@ -138,15 +151,8 @@ public class MainActivity extends Activity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
  
         if (savedInstanceState == null) {
-        	if(prefs.getString("token", null) == null) {
-        		Intent myIntent = new Intent(this, LoginActivity.class);
-        		startActivity(myIntent);
-            } else {
-            	unregistered_user = false;
-            	displayView(0);
-            }
-            // on first time display view for first nav item
-            
+        	// on first time display view for first nav item
+        	displayView(0);
         }
      
     }
@@ -192,16 +198,81 @@ public class MainActivity extends Activity {
         	SharedPreferences.Editor editor =  prefs.edit();
         	editor.clear();
         	editor.commit();
-        	Intent myIntent = new Intent(this, LoginActivity.class);
-    		startActivity(myIntent);
+        	Intent longinIntent = new Intent(this, LoginActivity.class);
+    		startActivity(longinIntent);
         	return true;
         case R.id.action_read_meter:
-        	displayView(-3);
+        	Dialog dialog = new Dialog(this);
+        	dialog.setTitle("TAKE METER READING");
+        	dialog.setContentView(R.layout.meter_modal);
+        	Spinner spin1 = (Spinner)dialog.findViewById(R.id.spinner1);
+        	Spinner spin2 = (Spinner)dialog.findViewById(R.id.spinner2);
+        	Spinner spin3 = (Spinner)dialog.findViewById(R.id.spinner3);
+        	Button confirm = (Button)dialog.findViewById(R.id.buttonStartMeterRead);
+        	spin1.setOnItemSelectedListener(new OnItemSelectedListener() {
+        		
+				@Override
+				public void onItemSelected(AdapterView<?> arg0, View arg1,
+						int arg2, long arg3) {
+					String[] utility_types = getResources().getStringArray(R.array.utility_types);;
+					utilityType = utility_types[arg2];
+				}
+
+				@Override
+				public void onNothingSelected(AdapterView<?> arg0) {
+					// TODO Auto-generated method stub
+					
+				}});
+        	spin2.setOnItemSelectedListener(new OnItemSelectedListener() {
+        		
+				@Override
+				public void onItemSelected(AdapterView<?> arg0, View arg1,
+						int arg2, long arg3) {
+					String[] meter_types = getResources().getStringArray(R.array.meter_types);;
+					meterType = meter_types[arg2];
+				}
+
+				@Override
+				public void onNothingSelected(AdapterView<?> arg0) {
+					// TODO Auto-generated method stub
+					
+				}});
+        	spin3.setOnItemSelectedListener(new OnItemSelectedListener() {
+        		
+				@Override
+				public void onItemSelected(AdapterView<?> arg0, View arg1,
+						int arg2, long arg3) {
+					String[] meter_units = getResources().getStringArray(R.array.meter_units);;
+					meterUnits = meter_units[arg2];
+				}
+
+				@Override
+				public void onNothingSelected(AdapterView<?> arg0) {
+					// TODO Auto-generated method stub
+					
+				}});
+        	confirm.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View arg0) {
+					startMeterActivity();
+					
+				}});
+        	dialog.show();
         	return true;
         default:
             return super.onOptionsItemSelected(item);
         }
     }
+    
+    public void startMeterActivity() {
+    	Intent meterIntent = new Intent(this, ReadMeterActivity.class);
+    	meterIntent.putExtra("utility_type", utilityType);
+    	meterIntent.putExtra("meter_type", meterType);
+    	meterIntent.putExtra("meter_units", meterUnits);
+		startActivity(meterIntent);
+    }
+    
+    
  
     /***
      * Called when invalidateOptionsMenu() is triggered
