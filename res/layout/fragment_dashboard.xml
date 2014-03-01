@@ -1,22 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#CAB79D"
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/txtLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="16dp"
-        android:text="Home View"/>
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding = "1dp"
+        android:layout_weight="0.3" >
+        
+        <Switch 
+		    android:id="@+id/togglebutton_dashboard"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/btn_switch_mode"
+		    android:switchPadding="10dp"
+		    android:textOn="GAS"
+		    android:textOff="ELECTRICITY"
+		    android:minHeight="25dp"
+		    />
 
-    <ImageView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtLabel"
-        android:src="@drawable/ic_dashboard"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1" >
+        
+         <Button
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:background="@drawable/dashboard_tile"
+            android:layout_margin="5dp"
+            android:layout_weight="1" 
+            android:onClick="goToSavings"
+            />
 
-</RelativeLayout>
+         <Button
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/dashboard_tile" 
+           	android:onClick="goToSavings" 
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1" >
+
+        <ImageButton
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:background="@drawable/dashboard_tile"
+            android:src = "@drawable/static_img_chart"
+            android:layout_margin="5dp"
+            android:layout_weight="1" 
+            android:onClick="goToUsage" 
+            />
+
+        <ImageButton
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:background="@drawable/dashboard_tile"
+            android:src = "@drawable/static_img_tree"
+            android:layout_margin="5dp"
+            android:layout_weight="1" 
+            android:onClick="goToCommunity" 
+            />
+    </LinearLayout>
+</LinearLayout>

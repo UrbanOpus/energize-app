@@ -14,6 +14,7 @@ import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
@@ -34,7 +35,7 @@ import android.widget.TextView;
 interface HTTPClientListener {
 	void onRequestCompleted(String method, String result);
 }
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 	
 	//RestAdapter restAdapter;
 	//EnergizeService service;
@@ -296,6 +297,8 @@ public class MainActivity extends Activity {
             fragment = new DashboardFragment();
             break;
         case 1:
+//            Intent myIntent = new Intent(this, DrawRectActivity.class);
+//            startActivity(myIntent); 
             fragment = new EnergyUsageFragment();
             break;
         case 2:
@@ -350,6 +353,16 @@ public class MainActivity extends Activity {
         mTitle = title;
         getActionBar().setTitle(mTitle);
     }
+    
+    public void goToSavings(View view) {
+		displayView(2);
+	}
+    public void goToUsage(View view) {
+		displayView(1);
+	}
+    public void goToCommunity(View view) {
+		displayView(3);
+	}
  
     /**
      * When using the ActionBarDrawerToggle, you must call it during

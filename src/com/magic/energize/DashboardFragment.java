@@ -15,8 +15,9 @@ public class DashboardFragment extends Fragment {
             Bundle savedInstanceState) {
   
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
-          
         return rootView;
     }
+   
+   
 
 }

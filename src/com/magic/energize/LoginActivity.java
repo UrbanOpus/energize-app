@@ -153,7 +153,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 			user_login.putString("password", hashSHA(password));
 			HTTPClient.POST(energizeUrl + "/login", user_login, "post-login", this);
 			mDialog = ProgressDialog.show(LoginActivity.this, "", 
-	                "Loging in. One moment please...", true);
+	                "Logging in. One moment please...", true);
 		
 		} else {
 			showNoConnection();
