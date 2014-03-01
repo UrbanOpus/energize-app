@@ -2,54 +2,57 @@
 <resources>
 
     <string name="app_name">Energize</string>
-    
+
     <!-- Login Page -->
     <string name="login_header">ENERGIZE</string>
-    <string name="sign_in_title">Sing In To Energize</string>
-    <string name="email_hint">email</string>
-    <string name="password_hint">password</string>
-    <string name="button_login">Sing In</string>
+    <string name="sign_in_title">Sign In To Energize</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="button_login">Sign In</string>
     <string name="button_forgot_pass">Forgot Password</string>
     <string name="button_register">Register</string>
     <string name="chk_login">Keep me logged in</string>
     <string name="login_terms_text">By tapping "Sign In", you are indicating that you have read &amp; agree to the <u>Privacy Policy &amp; Terms of Service</u>.</string>
     <string name="register_text">No Account?</string>
-    
+
     <!-- Registration Page -->
     <string name="register_title">Register an Account</string>
     <string name="password_confirm_hint">confirm password</string>
-    
-    
+
     <!-- Read Meter Page -->
     <string name="read_meter_header">ENTER METER READING</string>
     <string name="submit_meter_read">Submit Reading?</string>
     <string name="utility_prompt">UTILITY TYPE:</string>
+
     <string-array name="utility_types">
         <item>GAS</item>
         <item>ELECTRIC</item>
     </string-array>
+
     <string name="meter_prompt">METER TYPE:</string>
+
     <string-array name="meter_types">
         <item>CLOCK DIAL</item>
         <item>DIGITAL</item>
     </string-array>
+
     <string name="units_prompt">METER UNITS:</string>
+
     <string-array name="meter_units">
         <item>IMPERIAL</item>
         <item>METRIC</item>
     </string-array>
-    
-     
+
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
-        <item >Dashboard</item>
-        <item >Energy Usage</item>
-        <item >Energy Savings</item>
-        <item >My Hood</item>
-        <item >Safety Tips</item>
-        <item >Saving Tips</item>
+        <item>Dashboard</item>
+        <item>Energy Usage</item>
+        <item>Energy Savings</item>
+        <item>My Hood</item>
+        <item>Safety Tips</item>
+        <item>Saving Tips</item>
     </string-array>
-     
+
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">
@@ -60,15 +63,21 @@
         <item>@drawable/ic_tips_safety</item>
         <item>@drawable/ic_tips_saving</item>
     </array>
-    
+
     <!-- Actionbar Menu -->
     <string name="action_reminder">Reminder</string>
     <string name="action_settings">Settings</string>
     <string name="action_logout">Logout</string>
     <string name="action_read_meter">Read Meter</string>
-     
+
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
+    <string name="title_activity_energy_usage">EnergyUsageActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Dashboard Fragment Tab Titles -->
+    <string name="tab_title_1">Visualization</string>
+    <string name="tab_title_2">Chart</string>
 </resources>

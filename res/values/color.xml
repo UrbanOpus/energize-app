@@ -16,4 +16,7 @@
     
     <color name="meter_button">#377349</color>
     
+    <color name="btn_switch_electricity">#39855f</color>
+    <color name="btn_switch_gas">#51af80</color>
+    
 </resources>
