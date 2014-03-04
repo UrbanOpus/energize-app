@@ -23,7 +23,7 @@
 		    android:layout_weight=".40"
 		    android:minHeight="@dimen/login_header_text_size"
 		    android:gravity="center"
-		    android:text="@string/household_info_header"
+		    android:text="@string/login_header"
 		    android:textSize="@dimen/login_header_text_size"
 		    android:textColor="@android:color/white"
 		    />
