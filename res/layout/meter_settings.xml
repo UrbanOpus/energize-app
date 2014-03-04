@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" 
+    tools:context=".MainActivity" >
+    
+    
+  	<LinearLayout
+  	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="left"
+    	android:paddingLeft="25dp">
+    	<TextView 
+    	    android:id="@+id/utility_prompt"
+    	    android:text="@string/utility_prompt"
+    	    android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="120dp"/>   
+    	<Spinner
+	        android:id="@+id/spinner1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:minWidth="120dp"
+	        android:paddingTop="20dp"
+	        android:spinnerMode="dialog"
+	        android:entries="@array/utility_types"
+	        android:prompt="@string/utility_prompt" />
+    </LinearLayout>
+    
+  	<LinearLayout
+  	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="left"
+    	android:paddingLeft="25dp">
+    	<TextView 
+    	    android:id="@+id/meter_prompt"
+    	    android:text="@string/meter_prompt"
+    	    android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="120dp"/> 
+		<Spinner
+	        android:id="@+id/spinner2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:minWidth="120dp"
+	        android:paddingTop="20dp"
+	        android:spinnerMode="dialog"
+	        android:entries="@array/meter_types"
+	        android:prompt="@string/meter_prompt" />
+	</LinearLayout>
+
+   	<LinearLayout
+  	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="left"
+    	android:paddingLeft="25dp">
+		<TextView 
+    	    android:id="@+id/units_prompt"
+    	    android:text="@string/meter_prompt"
+    	    android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="120dp"/> 
+		<Spinner
+	        android:id="@+id/spinner3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:minWidth="120dp"
+	        android:paddingTop="20dp"
+	        android:entries="@array/meter_units"
+	        android:prompt="@string/units_prompt" />
+	</LinearLayout>
+	<Button
+        android:id="@+id/buttonStartMeterRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="OK" />
+ 
+</LinearLayout>

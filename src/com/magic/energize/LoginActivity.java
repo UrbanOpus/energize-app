@@ -8,7 +8,6 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,7 +28,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 	private final String TAG = "Energize.LoginActivity";
 	
 	SharedPreferences prefs;
-	private String energizeUrl = "http://192.168.0.14:3030/api";
+	private String energizeUrl = "http://128.189.81.53:3030/api";
 	
 	//** UI Declarations **/
 	private ProgressDialog mDialog;
@@ -179,19 +178,11 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 	private void goToLogin() {
 		LoginFragment fragment = new LoginFragment();
 		loadFragment(fragment, "login-fragment");
-		//FragmentManager fragmentManager = getFragmentManager();
-//		FragmentTransaction ft = getFragmentManager().beginTransaction();
-//        ft.replace(R.id.frame_login_container, fragment);
-//        ft.addToBackStack("");
-//        ft.commit();
 	}
 	
 	public void goToRegister(View view) {
 		RegistrationFragment fragment = new RegistrationFragment();
 		loadFragment(fragment, "register-fragment");
-//		FragmentManager fragmentManager = getFragmentManager();
-//        fragmentManager.beginTransaction()
-//                .replace(R.id.frame_login_container, fragment).commit();
 	}
 	
 	private void loadFragment(android.support.v4.app.Fragment fragment, String tag) {
@@ -286,6 +277,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 	        	editor.commit();
 	        	// Go back to main activity
 	        	Intent myIntent = new Intent(this, MainActivity.class);
+	        	myIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         		startActivity(myIntent);
 			} else {
 				Log.e(TAG, "Failed get json from post-register");

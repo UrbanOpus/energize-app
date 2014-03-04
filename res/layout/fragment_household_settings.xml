@@ -1,0 +1,153 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settings_background"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity" >
+    
+	<LinearLayout
+	    android:id="@+id/linearLayoutHouseholdInfo"
+	    android:orientation="horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="-10dp"
+	    android:gravity="center"
+	    android:weightSum="1"
+	    android:baselineAligned="false">
+	    
+       	<LinearLayout
+		    android:id="@+id/linearLayoutBody2"
+		    android:orientation="vertical"
+		    android:layout_width="0dip"
+		    android:layout_height="wrap_content"
+		    android:layout_weight=".85"
+		    android:layout_marginTop="20dp"
+		    android:gravity="center">
+	    
+			<TextView
+			    android:id="@+id/household_info_description"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="center"
+			    android:textSize="@dimen/household_info_description_size"
+			    android:text="@string/household_info_description"
+			    android:textColor="@android:color/black"/>
+		    
+		    <LinearLayout 
+		        android:id="@+id/linearLayout1"
+		        android:orientation="horizontal"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginTop="20dp"
+			    android:weightSum="1"
+			    android:baselineAligned="false">
+			    
+		        <LinearLayout 
+			        android:id="@+id/linearLayoutPrompts"
+			        android:orientation="vertical"
+			        android:gravity="left"
+				    android:layout_width="0dp"
+				    android:layout_weight=".5"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="10dp">
+				    
+		            <TextView
+					    android:id="@+id/num_members_text"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:minHeight="50dp"
+					    android:text="Number of Members:"
+					    android:textColor="@android:color/black"/>
+		            
+		            <TextView
+					    android:id="@+id/zip_code_text"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:minHeight="50dp"
+					    android:text="Zip Code:"
+					    android:textColor="@android:color/black"/>
+		            
+		            <TextView
+					    android:id="@+id/home_type_text"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:minHeight="50dp"
+					    android:text="Home Type (Optional):"
+					    android:textColor="@android:color/black"/>
+		            
+		            <TextView
+					    android:id="@+id/home_size_text"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:minHeight="50dp"
+					    android:text="Home Size (Optional):"
+					    android:textColor="@android:color/black"/>
+				    
+		        </LinearLayout>
+		        
+		        <LinearLayout 
+			        android:id="@+id/linearLayoutEntries"
+			        android:orientation="vertical"
+			        android:gravity="left"
+				    android:layout_width="0dp"
+				    android:layout_weight=".5"
+				    android:layout_height="wrap_content">
+		            
+		            <EditText
+					    android:id="@+id/household_memebers"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:minWidth="100dp"
+					    android:minHeight="50dp"
+					    android:gravity="center"
+					    android:hint="" />
+		            
+		            <EditText
+					    android:id="@+id/zip_code"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:minWidth="100dp"
+					    android:minHeight="50dp"
+					    android:gravity="center"
+					    android:hint="" />
+		            
+		          	<Spinner
+				        android:id="@+id/spinner3"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:minWidth="100dp"
+				        android:minHeight="50dp"
+				        android:entries="@array/home_types"
+				        android:prompt="@string/home_type_prompt" />
+		          	
+		          	<EditText
+					    android:id="@+id/home_size"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:minWidth="100dp"
+					    android:minHeight="50dp"
+					    android:gravity="right"
+					    android:hint="sq ft." />
+				    
+		        </LinearLayout>
+		    </LinearLayout>
+		    
+		
+		    
+		    <Button
+			    android:id="@+id/button_household_next"
+		   		android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_margin="5dp"
+			    android:paddingLeft="8dp"
+			    android:paddingRight="8dp"
+			    android:minHeight="@dimen/min_button_size"
+			    android:text="@string/button_next"
+			    android:textColor="@android:color/white"
+			    android:background="@color/next_button"
+			    android:onClick="householdNext" />    
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

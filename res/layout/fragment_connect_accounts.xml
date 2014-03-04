@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settings_background"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity" >
+    
+	<LinearLayout
+	    android:id="@+id/linearLayoutAccounts"
+	    android:orientation="horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="-10dp"
+	    android:gravity="center"
+	    android:weightSum="1"
+	    android:baselineAligned="false">
+	    
+	    <LinearLayout
+		    android:id="@+id/linearLayoutBody1"
+		    android:orientation="vertical"
+		    android:layout_width="0dip"
+		    android:layout_height="wrap_content"
+		    android:layout_weight=".85"
+		    android:layout_marginTop="20dp"
+		    android:gravity="center">
+		    
+	        <TextView
+			    android:id="@+id/account_info_description"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="center"
+			    android:textSize="@dimen/household_info_description_size"
+			    android:text="@string/account_info_description"
+			    android:textColor="@android:color/black"/>
+		    
+	       	
+	        <Button
+			    android:id="@+id/connect_gas_button"
+		   		android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginTop="40dp"
+			    android:paddingLeft="8dp"
+			    android:paddingRight="8dp"
+			    android:minHeight="@dimen/min_button_size"
+			    android:text="@string/connect_gas_button"
+			    android:textColor="@android:color/white"
+			    android:textSize="@dimen/connect_account_text_size"
+			    android:background="@color/register_slected_button"
+			    android:onClick="connectGasAccount" />
+	        
+	        <Button
+			    android:id="@+id/connect_electricity_button"
+		   		android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginTop="40dp"
+			    android:paddingLeft="8dp"
+			    android:paddingRight="8dp"
+			    android:minHeight="@dimen/min_button_size"
+			    android:text="@string/connect_electricity_button"
+			    android:textColor="@android:color/white"
+			    android:textSize="@dimen/connect_account_text_size"
+			    android:background="@color/register_slected_button"
+			    android:onClick="connectElectricityAccount" />    
+			    	        
+	        <Button
+			    android:id="@+id/button_account_next"
+		   		android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_marginTop="40dp"
+			    android:paddingLeft="8dp"
+			    android:paddingRight="8dp"
+			    android:minHeight="@dimen/min_button_size"
+			    android:text="@string/button_next"
+			    android:textColor="@android:color/white"
+			    android:background="@color/next_button"
+			    android:onClick="accountsNext" />    
+		</LinearLayout>
+    
+	</LinearLayout>
+</LinearLayout>

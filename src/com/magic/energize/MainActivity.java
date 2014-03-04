@@ -194,6 +194,7 @@ public class MainActivity extends FragmentActivity {
         // Handle action bar actions click
         switch (item.getItemId()) {
         case R.id.action_settings:
+        	startSettingsActivity();
             return true;
         case R.id.action_logout:
         	SharedPreferences.Editor editor =  prefs.edit();
@@ -205,7 +206,7 @@ public class MainActivity extends FragmentActivity {
         case R.id.action_read_meter:
         	Dialog dialog = new Dialog(this);
         	dialog.setTitle("TAKE METER READING");
-        	dialog.setContentView(R.layout.meter_modal);
+        	dialog.setContentView(R.layout.meter_settings);
         	Spinner spin1 = (Spinner)dialog.findViewById(R.id.spinner1);
         	Spinner spin2 = (Spinner)dialog.findViewById(R.id.spinner2);
         	Spinner spin3 = (Spinner)dialog.findViewById(R.id.spinner3);
@@ -271,6 +272,11 @@ public class MainActivity extends FragmentActivity {
     	meterIntent.putExtra("meter_type", meterType);
     	meterIntent.putExtra("meter_units", meterUnits);
 		startActivity(meterIntent);
+    }
+    
+    public void startSettingsActivity() {
+    	Intent settingsIntent = new Intent(this, SettingsActivity.class);
+		startActivity(settingsIntent);
     }
     
     

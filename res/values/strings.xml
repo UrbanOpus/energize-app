@@ -42,6 +42,27 @@
         <item>IMPERIAL</item>
         <item>METRIC</item>
     </string-array>
+    
+    <!-- Settings -->
+    <string name="household_info_header">ENTER HOUSEHOLD INFO</string>
+    <string name="household_info_description">Please provide your household info to help us understand your home energy usage.</string>
+    <string name="home_type_prompt">METER UNITS:</string>
+    <string-array name="home_types">
+        <item>Home Type 1</item>
+        <item>Home Type 2</item>
+    </string-array>
+    <string name="button_next">NEXT</string>
+    
+    <string name="account_info_description">Connect to your utility accounts to allow access to your household energy consumption data. You can also skip this step now and connect later.</string>
+    <string name="connect_gas_button">Connect to Gas Account</string>
+    <string name="connect_electricity_button">Connect to Electricity Account</string>
+    <string name="connect_electricity_title">Connect to Electricity Account</string>
+    <string name="connect_gas_title">Connect to Electricity Account</string>
+    
+    <string name="no_gas_account">No Account? Get one <a href="https://accounts.fortisbc.com/hcl-axon.com~iem~cssweb/pages/usrmgmt/regn1.xhtml"><u>here!</u></a></string>
+    <string name="no_electric_account">No Account? Get one <a href="https://www.bchydro.com/BCHCustomerPortal/createProfile.html"><u>here!</u></a></string>
+    <string name="account_password_prompt">Password: </string>
+    <string name="accountid_prompt">Account ID: </string>
 
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">

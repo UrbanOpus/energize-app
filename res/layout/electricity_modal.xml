@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" 
+    tools:context=".SettingsActivity" >
+    
+    <TextView 
+   	    android:id="@+id/connect_electricity_title"
+   	    android:text="@string/connect_electricity_title"
+   	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="120dp"/>  
+    
+  	<LinearLayout
+  	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal"
+    	android:gravity="left"
+    	android:paddingLeft="25dp">
+    	<TextView 
+    	    android:id="@+id/electricity_accountid_prompt"
+    	    android:text="@string/accountid_prompt"
+    	    android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="120dp"/>   
+    	<EditText
+	        android:id="@+id/electricity_account_id"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:minWidth="120dp"
+	        android:paddingTop="20dp"/>
+    </LinearLayout>
+    
+  	<LinearLayout
+  	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="left"
+    	android:paddingLeft="25dp">
+    	<TextView 
+    	    android:id="@+id/electricity_account_password_prompt"
+    	    android:text="@string/account_password_prompt"
+    	    android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="120dp"/> 
+		<EditText
+	        android:id="@+id/electricity_account_password"
+	        android:inputType="textPassword"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:minWidth="120dp"
+	        android:paddingTop="20dp"/>
+	</LinearLayout>
+	
+  	<TextView 
+   	    android:id="@+id/no_electricity_text"
+   	    android:text="@string/no_gas_account"
+   	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:minWidth="120dp"/>  
+
+	<Button
+        android:id="@+id/buttonConnectElecAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="Connect" />
+ 
+</LinearLayout>

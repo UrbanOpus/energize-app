@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settings_background"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity" >
+
+	<LinearLayout
+	    android:id="@+id/linearLayoutHeader"
+	    android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:background="@color/login_header_background"
+	    android:layout_height="110dp"
+	    android:gravity="center_horizontal">
+	    
+	    <TextView
+	        android:id="@+id/login_header"
+	        android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingTop="25dp"
+		    android:gravity="center"
+		    android:minHeight="@dimen/household_header_text_size"
+		    android:text="@string/household_info_header"
+		    android:textSize="@dimen/household_header_text_size"
+		    android:textColor="@android:color/white"
+		    />
+	</LinearLayout>
+	
+	<View
+	    android:id="@+id/rectangle_view"
+	    android:layout_width="match_parent"
+	    android:layout_height="15dp"
+	    android:background="@drawable/rectangle"/>
+	
+	<RelativeLayout
+	    android:id="@+id/householdLayoutIcons"
+	    android:orientation="horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height = "wrap_content"
+	    android:minHeight = "50dp"
+	    android:layout_marginTop="-55dp">
+	    
+	    <Button 
+	        android:id="@+id/step1_button"
+	        android:background="@drawable/round_button_selected"
+	        android:layout_width="85sp"
+	        android:layout_height="85sp"
+	        android:layout_marginLeft="30dp"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:layout_alignParentLeft="true"
+	        android:text="STEP1"
+	        android:textColor="@android:color/white"/>
+	    
+	    <Button 
+	        android:id="@+id/step2_button"
+	        android:background="@drawable/round_button_unselected"
+	        android:layout_width="85sp"
+	        android:layout_height="85sp"
+	        android:layout_marginLeft="30dp"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:layout_toRightOf="@id/step1_button"
+	        android:text="STEP2"
+	        android:textColor="@android:color/white"/>
+	    
+	    <Button 
+	        android:id="@+id/finish_button"
+	        android:background="@drawable/round_button_unselected"
+	        android:layout_width="85sp"
+	        android:layout_height="85sp"
+	        android:layout_marginLeft="30dp"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:layout_toRightOf="@id/step2_button"
+	        android:text="FINISH"
+	        android:textColor="@android:color/white"/>
+	    
+	</RelativeLayout>
+	<!-- Framelayout to display Fragments -->
+	<FrameLayout
+	    android:id="@+id/frame_settings_container"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    tools:context=".SettingsActivity" >
+	    
+	    
+	</FrameLayout>
+</LinearLayout>

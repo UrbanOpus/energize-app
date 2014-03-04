@@ -15,5 +15,9 @@
     <dimen name="read_meter_text_size">30dp</dimen>
     <dimen name="submit_reading_text_size">30dp</dimen>
     
+    
+    <dimen name="household_header_text_size">25dp</dimen>
+    <dimen name="household_info_description_size">12dp</dimen>
+    <dimen name="connect_account_text_size">15dp</dimen>
 
 </resources>

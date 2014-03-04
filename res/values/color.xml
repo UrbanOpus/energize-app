@@ -14,7 +14,14 @@
     <color name="forgot_pass_button">#738572</color>
     <color name="register_button">#4F8075</color>
     
+    <color name="next_button">#4FA267</color>
+    <!-- Dark green button -->
     <color name="meter_button">#377349</color>
+    <color name="register_slected_button">#377349</color>
+    <!-- Lighter green button -->
+    <color name="register_unslected_button">#4FA267</color>
+    <color name="settings_background">#E4E4E4</color>
+    <color name="blue_stripe">#278BAA</color>
     
     <color name="btn_switch_electricity">#39855f</color>
     <color name="btn_switch_gas">#51af80</color>

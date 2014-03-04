@@ -175,6 +175,9 @@ public class ReadMeterActivity extends Activity {
 	public void submitReading(View view) {
 		//TODO: Submit reading and send to server?
 		Log.d(TAG, "Submit Values :" + firstValue + ",  " + secondValue + ",  " + thirdValue + ",  " + fourthValue + ",  " + fifthValue);
-		super.onBackPressed();
+		// Go back to main activity
+    	Intent myIntent = new Intent(this, MainActivity.class);
+    	myIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+		startActivity(myIntent);
 	}
 }
