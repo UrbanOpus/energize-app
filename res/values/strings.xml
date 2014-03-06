@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Energize</string>
+    <string name="energize_api_url">http://energize-server.herokuapp.com/api</string>
 
     <!-- Login Page -->
     <string name="login_header">ENERGIZE</string>

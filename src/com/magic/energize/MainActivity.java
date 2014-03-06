@@ -37,12 +37,12 @@ interface HTTPClientListener {
 }
 public class MainActivity extends FragmentActivity {
 	
-	//RestAdapter restAdapter;
-	//EnergizeService service;
+	/** Set to false to make login not required **/
+	private final boolean FORCE_LOGIN = true;
+
 	SharedPreferences prefs;
 	public static boolean unregistered_user = true;
 	private final String TAG = "Energize.MainActivity";
-	private String energizeUrl = "http://192.168.0.13:3030/api";
 	
 	//** UI Declarations **/
 	//private ProgressDialog mDialog;
@@ -76,7 +76,7 @@ public class MainActivity extends FragmentActivity {
         prefs = getApplicationContext().getSharedPreferences("com.magic.urbanopis.energize", MODE_PRIVATE);
         imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         
-        if(prefs.getString("token", null) == null) {
+        if(prefs.getString("token", null) == null && FORCE_LOGIN) {
     		Intent myIntent = new Intent(this, LoginActivity.class);
     		startActivity(myIntent);
         } else {

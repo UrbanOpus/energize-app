@@ -28,7 +28,6 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 	private final String TAG = "Energize.LoginActivity";
 	
 	SharedPreferences prefs;
-	private String energizeUrl = "http://128.189.81.53:3030/api";
 	
 	//** UI Declarations **/
 	private ProgressDialog mDialog;
@@ -125,7 +124,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 				 *  Call HTTPClient.POST to handle POST
 				 *  - Url, data, callback_id, HTTPClientListener
 				 */
-				HTTPClient.POST(energizeUrl + "/register", new_user, "post-register", this);
+				HTTPClient.POST(getString(R.string.energize_api_url) + "/register", new_user, "post-register", this);
 				mDialog = ProgressDialog.show(LoginActivity.this, "", 
 		                "Registering. One moment please...", true);
 			} else {
@@ -150,7 +149,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 			Bundle user_login = new Bundle();
 			user_login.putString("email", email);
 			user_login.putString("password", hashSHA(password));
-			HTTPClient.POST(energizeUrl + "/login", user_login, "post-login", this);
+			HTTPClient.POST(getString(R.string.energize_api_url) + "/login", user_login, "post-login", this);
 			mDialog = ProgressDialog.show(LoginActivity.this, "", 
 	                "Logging in. One moment please...", true);
 		
