@@ -26,4 +26,7 @@
     <color name="btn_switch_electricity">#39855f</color>
     <color name="btn_switch_gas">#51af80</color>
     
+    <color name="analog_meter_background">#D3D3D3</color>
+    <color name="mini_meter_background">#535050</color>
+    
 </resources>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:orientation="vertical" 
+    android:orientation="vertical"
     tools:context=".SettingsActivity" >
     
     <TextView 
@@ -12,48 +12,48 @@
    	    android:text="@string/connect_electricity_title"
    	    android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="120dp"/>  
+        android:minWidth="250dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="20dp"/>  
     
   	<LinearLayout
   	    android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:orientation="horizontal"
     	android:gravity="left"
-    	android:paddingLeft="25dp">
+    	android:padding="10dp">
     	<TextView 
     	    android:id="@+id/electricity_accountid_prompt"
     	    android:text="@string/accountid_prompt"
     	    android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:minWidth="120dp"/>   
+	        android:minWidth="80dp"/>   
     	<EditText
 	        android:id="@+id/electricity_account_id"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:gravity="center"
-	        android:minWidth="120dp"
-	        android:paddingTop="20dp"/>
+	        android:minWidth="160dp"/>
     </LinearLayout>
     
   	<LinearLayout
   	    android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:gravity="left"
-    	android:paddingLeft="25dp">
+    	android:padding="10dp">
     	<TextView 
     	    android:id="@+id/electricity_account_password_prompt"
     	    android:text="@string/account_password_prompt"
     	    android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:minWidth="120dp"/> 
+	        android:minWidth="80dp"/> 
 		<EditText
 	        android:id="@+id/electricity_account_password"
 	        android:inputType="textPassword"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:gravity="center"
-	        android:minWidth="120dp"
-	        android:paddingTop="20dp"/>
+	        android:minWidth="160dp"/>
 	</LinearLayout>
 	
   	<TextView 

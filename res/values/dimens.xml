@@ -14,6 +14,8 @@
     <!-- Read Meter -->
     <dimen name="read_meter_text_size">30dp</dimen>
     <dimen name="submit_reading_text_size">30dp</dimen>
+    <dimen name="mini_meter_width">60dp</dimen>
+    <dimen name="mini_meter_height">90dp</dimen>
     
     
     <dimen name="household_header_text_size">25dp</dimen>

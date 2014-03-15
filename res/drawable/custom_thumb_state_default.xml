@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  @author : @alexduhem 
+		blog.sakaroz.com
+ -->
+<shape
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="oval">
+	<size
+		android:width="35dip"
+		android:height="35dip" />
+	<stroke
+		android:width="1dip"
+		android:color="@color/register_slected_button" />
+	<solid android:color="@color/register_slected_button"/>
+</shape>

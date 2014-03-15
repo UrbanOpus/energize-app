@@ -2,7 +2,9 @@
 <resources>
 
     <string name="app_name">Energize</string>
-    <string name="energize_api_url">http://energize-server.herokuapp.com/api</string>
+    <!--<string name="energize_api_url">http://energize-server.herokuapp.com/api</string>-->
+    <string name="energize_api_url">http://128.189.86.38:52673/api</string>
+    <string name="prefs_id">com.magic.urbanopis.energize</string>
 
     <!-- Login Page -->
     <string name="login_header">ENERGIZE</string>
@@ -64,6 +66,7 @@
     <string name="no_electric_account">No Account? Get one <a href="https://www.bchydro.com/BCHCustomerPortal/createProfile.html"><u>here!</u></a></string>
     <string name="account_password_prompt">Password: </string>
     <string name="accountid_prompt">Account ID: </string>
+    
 
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">

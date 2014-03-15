@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" 
+	android:layout_height="match_parent"
+	android:gravity="center" 
+	android:layout_gravity="center"
+	android:background="@color/analog_meter_background" xmlns:tools="http://schemas.android.com/tools" tools:context=".ReadMeterActivity">
+	
+    <LinearLayout 
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentTop="true">
+        
+        <LinearLayout 
+	        android:orientation="vertical"
+	        android:layout_width="@dimen/mini_meter_width"
+	        android:layout_height="@dimen/mini_meter_height"
+	        android:gravity="center"
+	        android:background="@color/mini_meter_background">
+	        <ImageView android:id="@+id/mini_meter1"
+			    android:src="@drawable/mini_meter"
+			    android:layout_width="wrap_content"                                
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
+		<LinearLayout 
+	        android:orientation="vertical"
+	        android:layout_width="@dimen/mini_meter_width"
+	        android:layout_height="@dimen/mini_meter_height"
+	        android:gravity="center"
+	        android:background="@color/mini_meter_background">
+	        <ImageView android:id="@+id/mini_meter2"
+			    android:src="@drawable/mini_meter"
+			    android:layout_width="wrap_content"                                
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
+		<LinearLayout 
+	        android:orientation="vertical"
+	        android:layout_width="@dimen/mini_meter_width"
+	        android:layout_height="@dimen/mini_meter_height"
+	        android:gravity="center"
+	        android:background="@color/mini_meter_background">
+	        <ImageView android:id="@+id/mini_meter3"
+			    android:src="@drawable/mini_meter"
+			    android:layout_width="wrap_content"                                
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
+		<LinearLayout 
+	        android:orientation="vertical"
+	        android:layout_width="@dimen/mini_meter_width"
+	        android:layout_height="@dimen/mini_meter_height"
+	        android:gravity="center"
+	        android:background="@color/mini_meter_background">
+	        <ImageView android:id="@+id/mini_meter4"
+			    android:src="@drawable/mini_meter"
+			    android:layout_width="wrap_content"                                
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
+
+		<LinearLayout
+		    android:layout_width="@dimen/mini_meter_width"
+		    android:layout_height="@dimen/mini_meter_height"
+		    android:background="@color/mini_meter_background"
+		    android:gravity="center"
+		    android:orientation="vertical" >
+
+	        <ImageView android:id="@+id/mini_meter5"
+			    android:src="@drawable/mini_meter"
+			    android:layout_width="wrap_content"                                
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
+    </LinearLayout>
+
+	<ImageView android:id="@+id/meter_background"
+	    android:src="@drawable/meter_background"
+	    android:layout_width="wrap_content"                                
+		android:layout_height="wrap_content"              
+		android:layout_centerInParent="true">
+	</ImageView>
+	<ImageView android:id="@+id/meter_dial"
+	    android:src="@drawable/meter_dial"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true" />
+	<TextView
+        android:id="@+id/analog_meter_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"/>
+	<SeekBar
+        android:id="@+id/analog_dial_setter"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/meter_background"
+        android:layout_centerHorizontal="true"
+        android:thumb="@drawable/custom_thumb_state_selected"
+        android:progressDrawable="@drawable/rectangle"/>
+	
+	<Button android:id="@+id/analog_reading"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_below="@id/analog_dial_setter"
+	    android:text="NEXT"/>
+	
+</RelativeLayout>

@@ -8,10 +8,19 @@ import kankan.wheel.widget.OnWheelScrollListener;
 import kankan.wheel.widget.WheelView;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
 
 public class ReadMeterActivity extends Activity {
 	private final String TAG = "Energize.ReadMeterActivity";
@@ -20,6 +29,11 @@ public class ReadMeterActivity extends Activity {
 	private String utilityType;
 	private String meterType;
 	private String meterUnits;
+	
+	//Meter UI
+	private ImageView img;
+	private SeekBar seekBar;
+	private TextView meterValue;
 	
 	// Value changed flag
 	private boolean valueChanged = false;
@@ -38,16 +52,23 @@ public class ReadMeterActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		setContentView(R.layout.read_meter_layout);
-		
 		// get settings for meter
 		Intent intent = getIntent();
 		utilityType = intent.getStringExtra("utility_type");
 		meterType = intent.getStringExtra("meter_type");
 		meterUnits = intent.getStringExtra("meter_units");
 		
-
+		//Clock dial
+		if(meterType.equals(getResources().getStringArray(R.array.meter_types)[0])) {
+			loadAnalogMeter();
+		} else if(meterType.equals(getResources().getStringArray(R.array.meter_types)[1])) { //Digital
+			loadDigitalMeter();
+		}
+	}
+	
+	public void loadDigitalMeter() {
+		setContentView(R.layout.read_meter_digital);
+		
 		final WheelView first = (WheelView) findViewById(R.id.first);
 		first.setViewAdapter(new IncrementWheelAdapter(this));
 		first.setCyclic(true);
@@ -139,7 +160,37 @@ public class ReadMeterActivity extends Activity {
 		third.addScrollingListener(scrollListener);
 		fourth.addScrollingListener(scrollListener);
 		fifth.addScrollingListener(scrollListener);
+	}
+	
+	public void loadAnalogMeter() {
+		setContentView(R.layout.read_meter_analog);
+		seekBar = (SeekBar) findViewById(R.id.analog_dial_setter);
+		seekBar.setMax(360);
+		img = (ImageView) findViewById(R.id.meter_dial);
+		meterValue = (TextView) findViewById(R.id.analog_meter_value);
+		
+		seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			int progress = 0;
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
+				doRotate(progress, progresValue);
+				progress = progresValue;
+			}
 
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// Do something here, 
+				//if you want to do anything at the start of
+				// touching the seekbar
+			}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// Display the value in textview
+				//meterValue.setText(progress);
+			}
+		});
+		//doRotate();
 	}
 
 	/**
@@ -168,6 +219,36 @@ public class ReadMeterActivity extends Activity {
 		});
 	}
 	
+	public void doRotate(int oldVal, int newVal) {
+		final class DialAnimation implements Runnable {
+			int oldValue;
+			int newValue;
+			public DialAnimation(int oldVal, int newVal) {
+				oldValue = oldVal;
+				newValue = newVal;
+			}
+			@Override
+			public void run() {
+				try {
+					RotateAnimation rotateAnimation = new RotateAnimation(
+							oldValue, newValue,
+							Animation.RELATIVE_TO_SELF, 0.5f,
+							Animation.RELATIVE_TO_SELF, 0.5f);
+					rotateAnimation.setInterpolator(new LinearInterpolator());
+					rotateAnimation.setDuration(1);
+					rotateAnimation.setFillAfter(true);
+					img.startAnimation(rotateAnimation);
+					meterValue.setText(newValue/36+"");
+				} catch (Exception e) {
+
+				}
+				
+			}
+			
+		}
+		runOnUiThread(new DialAnimation(oldVal, newVal));
+	}
+	
 	public void cancelReading(View view) {
 		super.onBackPressed();
 	}
@@ -175,9 +256,20 @@ public class ReadMeterActivity extends Activity {
 	public void submitReading(View view) {
 		//TODO: Submit reading and send to server?
 		Log.d(TAG, "Submit Values :" + firstValue + ",  " + secondValue + ",  " + thirdValue + ",  " + fourthValue + ",  " + fifthValue);
-		// Go back to main activity
-    	Intent myIntent = new Intent(this, MainActivity.class);
-    	myIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-		startActivity(myIntent);
+		String title = "The meter reading is:";
+		String text = "|" +firstValue + "|" + secondValue + "|" + thirdValue + "|" + fourthValue + "|" + fifthValue + "|";
+		AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
+		alertBuilder.setMessage(text).setTitle(title)
+	       .setCancelable(false)
+	       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	                dialog.cancel();
+	                // Go back to main activity
+	            	Intent myIntent = new Intent(ReadMeterActivity.this, MainActivity.class);
+	        		startActivity(myIntent);
+	           }
+	       });
+		AlertDialog alert = alertBuilder.create();
+		alert.show();
 	}
 }

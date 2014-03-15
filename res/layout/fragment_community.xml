@@ -3,20 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txtLabel"
+
+
+    <ImageView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="16dp"
-        android:text="My Hood View"/>
-
-    <ImageView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtLabel"
-        android:src="@drawable/ic_community"
+        android:src="@drawable/my_hood"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
-
+        android:scaleType="fitXY"/>
 
 </RelativeLayout>

@@ -45,7 +45,7 @@
 		        android:layout_width="0dp"
 		        android:layout_weight="33"
 		        android:layout_height="wrap_content"
-		        android:src="@drawable/ic_tips_safety"/>
+		        android:src="@drawable/ic_facebook_login"/>
 		    
 		    <ImageButton 
 		        android:id="@+id/energize_login_button"
@@ -53,7 +53,7 @@
 		        android:layout_width="0dp"
 		        android:layout_weight="33"
 		        android:layout_height="wrap_content"
-		        android:src="@drawable/ic_tips_saving"/>
+		        android:src="@drawable/ic_app_login"/>
 		    
 		    <ImageButton 
 		        android:id="@+id/google_login_button"
@@ -61,7 +61,7 @@
 		        android:layout_width="0dp"
 		        android:layout_weight="33"
 		        android:layout_height="wrap_content"
-		        android:src="@drawable/ic_community"/>
+		        android:src="@drawable/ic_google_login"/>
 		    
 	    </LinearLayout>
 	    

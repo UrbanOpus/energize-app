@@ -44,9 +44,14 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		
-		prefs = getApplicationContext().getSharedPreferences("com.magic.urbanopis.energize", MODE_PRIVATE);
+		prefs = getApplicationContext().getSharedPreferences(getString(R.string.prefs_id), MODE_PRIVATE);
 		imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
 		alertBuilder = new AlertDialog.Builder(this);
+		
+		if(prefs.getString("token", null) != null) {
+			// Why are we here if we're already logged in???
+			goToHome();
+		}
 		
 		final View activityRootView = findViewById(R.id.frame_login_container);
 		activityRootView.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
@@ -90,7 +95,6 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 		        
 			        Intent intent = new Intent(Intent.ACTION_MAIN);
 			        intent.addCategory(Intent.CATEGORY_HOME);
-			        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			        startActivity(intent);
 		    }
 	    }
@@ -112,7 +116,6 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 			
 			if(password.equals(password_confirm)) {
 				
-				//TODO: confirm password
 				Bundle new_user = new Bundle();
 				new_user.putString("fname", fname);
 				new_user.putString("lname", lname);
@@ -124,7 +127,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 				 *  Call HTTPClient.POST to handle POST
 				 *  - Url, data, callback_id, HTTPClientListener
 				 */
-				HTTPClient.POST(getString(R.string.energize_api_url) + "/register", new_user, "post-register", this);
+				HTTPClient.POST(getString(R.string.energize_api_url) + "/register", new_user, HTTPClient.REGISTER_ID, this);
 				mDialog = ProgressDialog.show(LoginActivity.this, "", 
 		                "Registering. One moment please...", true);
 			} else {
@@ -149,7 +152,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 			Bundle user_login = new Bundle();
 			user_login.putString("email", email);
 			user_login.putString("password", hashSHA(password));
-			HTTPClient.POST(getString(R.string.energize_api_url) + "/login", user_login, "post-login", this);
+			HTTPClient.POST(getString(R.string.energize_api_url) + "/login", user_login, HTTPClient.LOGIN_ID, this);
 			mDialog = ProgressDialog.show(LoginActivity.this, "", 
 	                "Logging in. One moment please...", true);
 		
@@ -198,7 +201,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 	@Override
 	public void onRequestCompleted(String method, String result) {
 		mDialog.cancel();
-		if(result.equals("ERROR")) {
+		if(result == null || result.equals("ERROR")) {
 			Log.e(TAG, "Web Request Failed");
 			//TODO: Handle connection refused/connection error
 			
@@ -222,10 +225,10 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 		try {
 			error = json.getString("error");
 			Log.e(TAG, "Server Error : " + error);
-			if(method.equals("post-register")) {
+			if(method.equals(HTTPClient.REGISTER_ID)) {
 				TextView errTxt = (TextView)findViewById(R.id.error_registration);
 				errTxt.setText(error);
-			} else if (method.equals("post-login")) {
+			} else if (method.equals(HTTPClient.LOGIN_ID)) {
 				TextView errTxt = (TextView)findViewById(R.id.error_login);
 				errTxt.setText(error);
 			}
@@ -236,23 +239,25 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 		}
 		
 		// If no error, continue on and execute proper action
-		if(method.equals("post-register")) {
+		if(method.equals(HTTPClient.REGISTER_ID)) {
 			Log.d(TAG, result);
 			JSONObject user;
 			try {
 				user = json.getJSONObject("user");
 				initializeUser(user);
+				goToSettings();
 			} catch (JSONException e) {
 				Log.e(TAG, "Failed get user json from post-register");
 				e.printStackTrace();
 				return;
 			}
-		} else if(method.equals("post-login")) {
+		} else if(method.equals(HTTPClient.LOGIN_ID)) {
 			Log.d(TAG, result);
 			JSONObject user;
 			try {
 				user = json.getJSONObject("user");
 				initializeUser(user);
+				goToHome();
 			} catch (JSONException e) {
 				Log.e(TAG, "Failed get user json from post-login");
 				e.printStackTrace();
@@ -274,10 +279,6 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 	        	editor.putString("lname", user.getString("lname"));
 	        	editor.putString("email", user.getString("email"));
 	        	editor.commit();
-	        	// Go back to main activity
-	        	Intent myIntent = new Intent(this, MainActivity.class);
-	        	myIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        		startActivity(myIntent);
 			} else {
 				Log.e(TAG, "Failed get json from post-register");
 			}
@@ -286,6 +287,18 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 			Log.w(TAG, "Unable to parse user data from JSON.");
 			e.printStackTrace();
 		}
+	}
+	
+	public void goToHome() {
+		// Go back to main activity
+    	Intent i = new Intent(this, MainActivity.class);
+		startActivity(i);
+	}
+	
+	public void goToSettings() {
+		// Go back to settings activity
+    	Intent i = new Intent(this, SettingsActivity.class);
+		startActivity(i);
 	}
 	
 	public String hashSHA(String password) {

@@ -27,6 +27,10 @@ import android.os.Bundle;
 import android.util.Log;
 
 public class HTTPClient {
+	public static final String LOGIN_ID = "post-login";
+	public static final String REGISTER_ID = "post-register";
+	public static final String ADD_GAS_ACCOUNT_ID = "post-add-gas";
+	public static final String ADD_ELECTRIC_ACCOUNT_ID = "post-add-electric";
 	
 	private static final String TAG = "Energize.HttpClient";
 	//private static final 
