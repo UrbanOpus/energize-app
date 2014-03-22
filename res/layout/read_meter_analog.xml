@@ -8,65 +8,77 @@
 	android:background="@color/analog_meter_background" xmlns:tools="http://schemas.android.com/tools" tools:context=".ReadMeterActivity">
 	
     <LinearLayout 
+        android:id="@+id/mini_meter_layout"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:weightSum="5"
         android:layout_alignParentTop="true">
         
         <LinearLayout 
+            android:id="@+id/mini_meter1"
 	        android:orientation="vertical"
 	        android:layout_width="@dimen/mini_meter_width"
 	        android:layout_height="@dimen/mini_meter_height"
 	        android:gravity="center"
+	        android:layout_weight="1"
 	        android:background="@color/mini_meter_background">
-	        <ImageView android:id="@+id/mini_meter1"
+	        <ImageView android:id="@+id/mini_meter1_img"
 			    android:src="@drawable/mini_meter"
 			    android:layout_width="wrap_content"                                
 				android:layout_height="wrap_content"/>
 		</LinearLayout>
 		<LinearLayout 
+		    android:id="@+id/mini_meter2"
 	        android:orientation="vertical"
 	        android:layout_width="@dimen/mini_meter_width"
 	        android:layout_height="@dimen/mini_meter_height"
 	        android:gravity="center"
+	        android:layout_weight="1"
 	        android:background="@color/mini_meter_background">
-	        <ImageView android:id="@+id/mini_meter2"
+	        <ImageView android:id="@+id/mini_meter2_img"
 			    android:src="@drawable/mini_meter"
 			    android:layout_width="wrap_content"                                
 				android:layout_height="wrap_content"/>
 		</LinearLayout>
 		<LinearLayout 
+		    android:id="@+id/mini_meter3"
 	        android:orientation="vertical"
 	        android:layout_width="@dimen/mini_meter_width"
 	        android:layout_height="@dimen/mini_meter_height"
 	        android:gravity="center"
+	        android:layout_weight="1"
 	        android:background="@color/mini_meter_background">
-	        <ImageView android:id="@+id/mini_meter3"
+	        <ImageView android:id="@+id/mini_meter3_img"
 			    android:src="@drawable/mini_meter"
 			    android:layout_width="wrap_content"                                
 				android:layout_height="wrap_content"/>
 		</LinearLayout>
-		<LinearLayout 
+		<LinearLayout
+		    android:id="@+id/mini_meter4"
 	        android:orientation="vertical"
 	        android:layout_width="@dimen/mini_meter_width"
 	        android:layout_height="@dimen/mini_meter_height"
 	        android:gravity="center"
+	        android:layout_weight="1"
 	        android:background="@color/mini_meter_background">
-	        <ImageView android:id="@+id/mini_meter4"
+	        <ImageView android:id="@+id/mini_meter4_img"
 			    android:src="@drawable/mini_meter"
 			    android:layout_width="wrap_content"                                
 				android:layout_height="wrap_content"/>
 		</LinearLayout>
 
 		<LinearLayout
+		    android:id="@+id/mini_meter5"
 		    android:layout_width="@dimen/mini_meter_width"
 		    android:layout_height="@dimen/mini_meter_height"
 		    android:background="@color/mini_meter_background"
 		    android:gravity="center"
+		    android:layout_weight="1"
 		    android:orientation="vertical" >
 
-	        <ImageView android:id="@+id/mini_meter5"
+	        <ImageView android:id="@+id/mini_meter5_img"
 			    android:src="@drawable/mini_meter"
 			    android:layout_width="wrap_content"                                
 				android:layout_height="wrap_content"/>
@@ -101,12 +113,28 @@
         android:thumb="@drawable/custom_thumb_state_selected"
         android:progressDrawable="@drawable/rectangle"/>
 	
-	<Button android:id="@+id/analog_reading"
-	    android:layout_width="wrap_content"
+	<LinearLayout 
+	    android:id="@+id/prev_next_analog"
+	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_marginTop="10dp"
-	    android:layout_centerHorizontal="true"
+	    android:gravity = "center"
 	    android:layout_below="@id/analog_dial_setter"
-	    android:text="NEXT"/>
+	    android:orientation="horizontal">
+		
+	    <Button android:id="@+id/analog_reading_prev"
+	        android:visibility="invisible"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="onAnalogPrev"
+		    android:text="PREVIOUS"/>
+		
+		<Button android:id="@+id/analog_reading_next"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="onAnalogNext"
+		    android:text="NEXT"/>
+		
+	</LinearLayout>
 	
 </RelativeLayout>

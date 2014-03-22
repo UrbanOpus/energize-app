@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Energize</string>
-    <!--<string name="energize_api_url">http://energize-server.herokuapp.com/api</string>-->
-    <string name="energize_api_url">http://128.189.86.38:52673/api</string>
+    <string name="unversal_log_tag">@string/app_name</string>
+    <!-- <string name="energize_api_url">http://128.189.86.38:52673/api</string>-->
+    <string name="energize_api_url">http://energize-server.herokuapp.com/api</string>
     <string name="prefs_id">com.magic.urbanopis.energize</string>
 
     <!-- Login Page -->
@@ -35,15 +35,15 @@
     <string name="meter_prompt">METER TYPE:</string>
 
     <string-array name="meter_types">
-        <item>CLOCK DIAL</item>
         <item>DIGITAL</item>
+        <item>CLOCK DIAL</item>
     </string-array>
 
     <string name="units_prompt">METER UNITS:</string>
 
     <string-array name="meter_units">
-        <item>IMPERIAL</item>
         <item>METRIC</item>
+        <item>IMPERIAL</item>
     </string-array>
     
     <!-- Settings -->

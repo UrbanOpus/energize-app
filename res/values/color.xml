@@ -28,5 +28,6 @@
     
     <color name="analog_meter_background">#D3D3D3</color>
     <color name="mini_meter_background">#535050</color>
+    <color name="mini_meter_background_selected">#599753</color>
     
 </resources>

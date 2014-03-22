@@ -21,9 +21,11 @@
 	    />
 	
 	<LinearLayout
+	    android:id="@+id/wheel_view_layout"
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
 		android:layout_gravity="center_horizontal"
+		android:weightSum="5"
 		android:paddingLeft="12dp"
 		android:paddingRight="12dp"
 		android:paddingTop="40dp"
@@ -31,19 +33,24 @@
 	  
 	  	<kankan.wheel.widget.WheelView android:id="@+id/first"
 			android:layout_height="wrap_content"
-			android:layout_width="65dp"/>
+			android:layout_width="65dp"
+			android:layout_weight="1"/>
 		<kankan.wheel.widget.WheelView android:id="@+id/second"
 			android:layout_height="wrap_content"
-			android:layout_width="65dp"/>
+			android:layout_width="65dp"
+			android:layout_weight="1"/>
 		<kankan.wheel.widget.WheelView android:id="@+id/third"
 			android:layout_height="wrap_content"
-			android:layout_width="65dp"/>
+			android:layout_width="65dp"
+			android:layout_weight="1"/>
 		<kankan.wheel.widget.WheelView android:id="@+id/fourth"
 			android:layout_height="wrap_content"
-			android:layout_width="65dp"/>
+			android:layout_width="65dp"
+			android:layout_weight="1"/>
 		<kankan.wheel.widget.WheelView android:id="@+id/fifth"
 			android:layout_height="wrap_content"
-			android:layout_width="65dp"/>
+			android:layout_width="65dp"
+			android:layout_weight="1"/>
 	</LinearLayout>
 	
 	<LinearLayout
