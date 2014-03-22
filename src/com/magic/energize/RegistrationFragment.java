@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class RegistrationFragment extends Fragment {
-	private String TAG = "Energize.RegistrationFragment";
+	private String TAG = MainActivity.UNIVERSAL_TAG + ".RegistrationFragment";
 	public RegistrationFragment(){}
 	
 	SharedPreferences prefs;

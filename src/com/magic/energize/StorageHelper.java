@@ -9,7 +9,7 @@ import android.util.Log;
 
 
 public class StorageHelper extends SQLiteOpenHelper {
-	public static final String TAG = "Energize.StorageHelper";
+	public static final String TAG = MainActivity.UNIVERSAL_TAG + ".StorageHelper";
 	public static final double DEFAULT_CONVERSION_FACTOR = 0.038;
 	
 	// All Static variables

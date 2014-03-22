@@ -29,7 +29,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 public class ReadMeterActivity extends Activity {
-	private final String TAG = "Energize.ReadMeterActivity";
+	private final String TAG = MainActivity.UNIVERSAL_TAG + ".ReadMeterActivity";
 	
 	//Meter Settings
 	private String utilityType;

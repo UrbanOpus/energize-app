@@ -25,7 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends FragmentActivity implements HTTPClientListener {
-	private final String TAG = "Energize.LoginActivity";
+	private final String TAG = MainActivity.UNIVERSAL_TAG + ".LoginActivity";
 	
 	SharedPreferences prefs;
 	

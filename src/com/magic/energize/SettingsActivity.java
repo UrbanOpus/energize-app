@@ -22,7 +22,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class SettingsActivity extends FragmentActivity implements HTTPClientListener {
-	private final String TAG = "Energize.SettingsActivity";
+	private final String TAG = MainActivity.UNIVERSAL_TAG + ".SettingsActivity";
 	SharedPreferences prefs;
 	private boolean keyboard_open;
 	private ProgressDialog mDialog;

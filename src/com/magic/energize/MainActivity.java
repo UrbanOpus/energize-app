@@ -42,7 +42,8 @@ public class MainActivity extends FragmentActivity {
 
 	SharedPreferences prefs;
 	public static boolean unregistered_user = true;
-	private final String TAG = "Energize.MainActivity";
+	public static final String UNIVERSAL_TAG = "Energize"; //getString(R.string.unversal_log_tag);
+	private final String TAG = UNIVERSAL_TAG + ".MainActivity";
 	
 	//** UI Declarations **/
 	//private ProgressDialog mDialog;
