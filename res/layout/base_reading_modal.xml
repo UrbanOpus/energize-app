@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity" >
+    
+    <TextView 
+   	    android:id="@+id/base_reading_title"
+   	    android:text="@string/base_reading_description"
+   	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="250dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="20dp"/>  
+
+	<Button
+        android:id="@+id/base_reading_from_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Enter Reading From Bill" />
+	
+	<Button
+        android:id="@+id/base_reading_from_meter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Take Meter Reading" />
+	
+	<Button
+        android:id="@+id/base_reading_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@android:string/cancel" />
+ 
+</LinearLayout>

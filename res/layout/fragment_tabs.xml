@@ -53,7 +53,7 @@
  android:background="#FBEFDF">
      
      <fragment 
-	          class="com.magic.energize.UsageChartFragment"
+	          class="com.magic.energize.fragments.UsageChartFragment"
  			  android:id="@+id/usage_chart_fragment"
               android:layout_width="match_parent"
               android:layout_height="match_parent" />

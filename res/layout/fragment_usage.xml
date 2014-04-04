@@ -1,19 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
- xmlns:android="http://schemas.android.com/apk/res/android"
- android:orientation="vertical"
- android:layout_width="fill_parent"
- android:layout_height="fill_parent">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
 
- <fragment
- class="com.magic.energize.TabsFragment"
- android:id="@+id/tabs_fragment"
- android:layout_width="fill_parent"
- android:layout_height="fill_parent" />
- 
+	<TabHost
+		android:id="@android:id/tabhost"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:background="#CAB79D">
 
- 
- 
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:weightSum="2">
+
+			<TabWidget
+				android:id="@android:id/tabs"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"/>
+
+			<FrameLayout
+				android:id="@android:id/tabcontent"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				
+			    <!-- Visualization Tab -->
+				<LinearLayout
+		            android:id="@+id/tab1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:orientation="vertical"
+		            android:weightSum="100">
+		            
+				    <com.magic.energize.ui.TabLinearLayout
+			            android:id="@+id/tab_slide1"
+			            android:layout_width="fill_parent"
+			            android:layout_height="0dp"
+			            android:orientation="vertical"
+			            android:layout_marginLeft="-120dp"
+			            android:layout_weight="75"
+			            android:weightSum="75">
+
+			            <LinearLayout
+			                android:layout_width="fill_parent"
+			            	android:layout_height="0dp"
+			            	android:orientation="horizontal"
+			            	android:background="@color/tab_bg_selected" 
+			            	android:layout_weight="40"
+			            	android:layout_gravity="bottom"
+			            	android:gravity="center">			            	
+			                <ImageView 
+			                    android:id="@+id/vis_top1"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:layout_marginBottom="-25dp"
+			                    android:text="N/A"/>
+			                <ImageView 
+			                    android:id="@+id/vis_top2"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:layout_marginBottom="-25dp"
+			                    android:text="N/A"/>
+			                <ImageView 
+			                    android:id="@+id/vis_top3"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:layout_marginBottom="-25dp"
+			                    android:text="N/A"/>
+			                <ImageView
+			                    android:id="@+id/vis_top4"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:layout_marginBottom="-25dp"
+			                    android:text="N/A"/>
+			                <ImageView
+			                    android:id="@+id/vis_top5"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:layout_marginBottom="-25dp"
+			                    android:text="N/A"/>
+			                
+			            </LinearLayout>
+	
+			            <LinearLayout
+							android:layout_width="fill_parent"
+			            	android:layout_height="0dp"
+			            	android:orientation="horizontal"
+			            	android:background="@color/tab_vis_mid_bg" 
+			            	android:layout_weight="10">
+			                
+			                <TextView
+			                    android:id="@+id/vis_mid1"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:text="N/A"
+			                    android:textStyle="bold"/>
+			                <TextView
+			                    android:id="@+id/vis_mid2"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:text="N/A"
+			                    android:textStyle="bold"/>
+			                <TextView 
+			                    android:id="@+id/vis_mid3"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:text="N/A"
+			                    android:textStyle="bold"/>
+			                <TextView
+			                    android:id="@+id/vis_mid4"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:text="N/A"
+			                    android:textStyle="bold"/>
+			                <TextView 
+			                    android:id="@+id/vis_mid5"
+			                    android:layout_width="0dp"
+			                    android:layout_height="fill_parent"
+			                    android:layout_weight="1"
+			                    android:gravity="center"
+			                    android:text="N/A"
+			                    android:textStyle="bold"/>
+			                
+			            </LinearLayout>
+			            
+			            <LinearLayout
+							android:layout_width="fill_parent"
+			            	android:layout_height="0dp"
+			            	android:orientation="horizontal"
+			            	android:background="@color/tab_vis_bottom_bg" 
+			            	android:layout_weight="25"
+			            	android:gravity="center_horizontal"> 	                
+			                <com.magic.energize.ui.GraphView
+			                    android:id="@+id/vis_bot1"
+			                    android:layout_width="0dp"
+			                    android:layout_height="wrap_content"
+			                    android:layout_weight="1"
+			                    android:orientation="horizontal"/>
+			                <com.magic.energize.ui.GraphView
+			                    android:id="@+id/vis_bot2"
+			                    android:layout_width="0dp"
+			                    android:layout_height="wrap_content"
+			                    android:layout_weight="1"
+			                    android:orientation="horizontal"/>
+			                <com.magic.energize.ui.GraphView
+			                    android:id="@+id/vis_bot3"
+			                    android:layout_width="0dp"
+			                    android:layout_height="wrap_content"
+			                    android:layout_weight="1"
+			                    android:orientation="horizontal"/>
+			                <com.magic.energize.ui.GraphView
+			                    android:id="@+id/vis_bot4"
+			                    android:layout_width="0dp"
+			                    android:layout_height="wrap_content"
+			                    android:layout_weight="1"
+			                    android:orientation="horizontal"/>
+			                <com.magic.energize.ui.GraphView
+			                    android:id="@+id/vis_bot5"
+			                    android:layout_width="0dp"
+			                    android:layout_height="wrap_content"
+			                    android:layout_weight="1"
+			                    android:orientation="horizontal"/>
+			            </LinearLayout>
+		           	</com.magic.energize.ui.TabLinearLayout>
+		           	<LinearLayout
+						android:layout_width="fill_parent"
+		            	android:layout_height="0dp"
+		            	android:orientation="vertical"
+		            	android:background="@color/tab_vis_bottom_bg" 
+		            	android:layout_weight="25"
+		            	android:gravity="center_horizontal"
+		            	android:layout_gravity="top"
+		            	android:paddingTop="10dp">
+			           	<!-- Stuff on the bottom of Visualization that stays static -->
+			    	</LinearLayout>
+		        </LinearLayout>
+				
+				
+				<!-- Chart Tab -->
+				<com.magic.energize.ui.TabLinearLayout
+		            android:id="@+id/tab2"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:orientation="vertical"
+		            android:weightSum="100">
+		            
+		            <LinearLayout
+		                android:layout_width="fill_parent"
+		            	android:layout_height="0dp"
+		            	android:orientation="horizontal"
+		            	android:gravity="center"
+		            	android:background="@color/tab_bg_selected" 
+		            	android:layout_weight="75">
+		                <TextView 
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:gravity="center"
+		                    android:paddingRight="40dp"
+		                    android:paddingLeft="40dp"
+		                    android:text="N/A"/>
+		                <TextView 
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:gravity="center"
+		                    android:paddingRight="40dp"
+		                    android:paddingLeft="40dp"
+		                    android:text="N/A"/>
+		                <TextView 
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:gravity="center"
+		                    android:paddingRight="40dp"
+		                    android:paddingLeft="40dp"
+		                    android:text="N/A"/>
+		                <TextView 
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:gravity="center"
+		                    android:paddingRight="40dp"
+		                    android:paddingLeft="40dp"
+		                    android:text="N/A"/>
+		            </LinearLayout>
+
+		            <LinearLayout
+						android:layout_width="fill_parent"
+		            	android:layout_height="0dp"
+		            	android:orientation="horizontal"
+		            	android:background="@color/tab_chart_bottom_bg" 
+		            	android:layout_weight="25">
+		                <!-- Anything after slide -->
+		            </LinearLayout>
+
+		        </com.magic.energize.ui.TabLinearLayout>
+			</FrameLayout>
+		</LinearLayout>
+	</TabHost>
 </LinearLayout>
 
 <!-- <android.support.v4.app.FragmentTabHost

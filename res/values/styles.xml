@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -15,12 +15,34 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:actionBarStyle">@style/EnergizeActionBar</item>
     </style>
-    
-    
+
     <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowBackground">@null</item>
     </style>
     
+    <style name="EnergizeActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/action_bar_background</item>
+        <item name="android:titleTextStyle">@style/ActionBarText</item>
+    </style>
+    
+   	<style name="ActionBarText" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/action_bar_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+   	<!-- Switch Syle (for elec/gas) -->
+	<style name="SwitchText" >
+	    <item name="android:paddingLeft">8px</item>
+	    <item name="android:paddingBottom">8px</item>
+	    <item name="android:textColor">#FFeeFFee</item>
+	    <item name="android:textSize">24sp</item>
+	    <item name="android:shadowColor">#BB000000</item>
+	    <item name="android:shadowDx">1</item>
+	    <item name="android:shadowDy">1</item>
+	    <item name="android:shadowRadius">1</item>
+	</style>
+
 </resources>

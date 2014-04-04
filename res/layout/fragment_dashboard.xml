@@ -14,14 +14,18 @@
         android:layout_weight="0.3" >
         
         <Switch 
-		    android:id="@+id/togglebutton_dashboard"
+		    android:id="@+id/utilities_switch"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:background="@drawable/btn_switch_mode"
-		    android:switchPadding="10dp"
-		    android:textOn="GAS"
-		    android:textOff="ELECTRICITY"
-		    android:minHeight="25dp"
+		    android:thumbTextPadding="5dp"
+			android:switchPadding="0sp"
+			android:track="@drawable/btn_switch_bg"
+		    android:thumb="@drawable/btn_switch_thumb"
+		    android:textOn="ELECTRICITY\t\t\t\t"
+		    android:textOff="GAS"
+		    android:textSize="18sp"
+		    android:textStyle="bold"
+		    android:minHeight="15dp"
 		    />
 
     </LinearLayout>
@@ -30,25 +34,68 @@
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:orientation="horizontal"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:baselineAligned="false" >
         
-         <Button
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:background="@drawable/dashboard_tile"
-            android:layout_margin="5dp"
-            android:layout_weight="1" 
-            android:onClick="goToSavings"
-            />
-
-         <Button
+         <LinearLayout
+            android:id="@+id/dashboard_top_left"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@drawable/dashboard_tile" 
-           	android:onClick="goToSavings" 
-            />
+            android:background="@drawable/dashboard_tile"
+            android:gravity="center"
+            android:orientation="vertical"
+           	android:onClick="goToSavings">
+           	<TextView
+                android:id="@+id/dashboard_tl_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/default_tl_title"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/dashboard_text_color"/>
+           	<TextView
+                android:id="@+id/dashboard_tl_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/default_tl_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textSize="35dp"
+                android:textColor="@color/dashboard_text_color"/>
+         </LinearLayout>
+           	
+
+         <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/dashboard_tile"
+            android:gravity="center"
+            android:orientation="vertical"
+           	android:onClick="goToSavings">
+           	<TextView
+                android:id="@+id/dashboard_tr_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/default_tr_title"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/dashboard_text_color"/>
+           	<TextView
+                android:id="@+id/dashboard_tr_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/default_tr_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:textColor="@color/dashboard_text_color"/>
+         </LinearLayout>
 
     </LinearLayout>
 

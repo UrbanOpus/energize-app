@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Energize</string>
+    <string name="app_title"><b>ENERGIZE</b></string>
     <string name="unversal_log_tag">@string/app_name</string>
     <!-- <string name="energize_api_url">http://128.189.86.38:52673/api</string>-->
     <string name="energize_api_url">http://energize-server.herokuapp.com/api</string>
-    <string name="prefs_id">com.magic.urbanopis.energize</string>
-
+    
+   	<!-- Preference Strings -->
+	<string name="prefs_id">com.magic.urbanopis.energize</string>
+	<string name="login_token">token</string> <!-- Token to indicate if user is logged in -->
+	<string name="user_fname">fname</string> <!-- First name of user -->
+	<string name="user_lname">lname</string> <!-- Last name of user -->
+	<string name="user_email">email</string> <!-- email of user -->
+	<string name="base_reading">base-reading</string> <!-- Timestamp of first meter reading to base future readings off -->
+    <string name="last_reading">last-reading</string> <!-- Timestamp of last meter reading -->
+    <string name="gas_id">gas-account-id</string> <!-- ID of fortis gas account -->
+    <string name="gas_pass">gas-account-pass</string> <!-- password for fortis gas account -->
+    <string name="elec_id">electric-account-id</string> <!-- ID of electricity provider account -->
+    <string name="elec_pass">electric-account-pass</string> <!-- password for electricity provider account -->
+    <string name="conversion_factor">conversion-factor</string>
+    
+    <!-- Dashboard Page -->
+    <string name="default_tl_title"><u>NO METER DATA</u></string>
+    <string name="default_tl_content">TAP TO ADD METER DATA</string>
+    <string name="default_tr_title"><u>Last Reading :</u></string>
+    <string name="default_tr_content">Never</string>
+    
+    <!-- Energy Usage Page -->
+	<string name="tab_vis_title">VISUALIZATION</string>
+	<string name="tab_chart_title">CHART</string>
+	
     <!-- Login Page -->
     <string name="login_header">ENERGIZE</string>
     <string name="sign_in_title">Sign In To Energize</string>
@@ -26,25 +50,30 @@
     <string name="read_meter_header">ENTER METER READING</string>
     <string name="submit_meter_read">Submit Reading?</string>
     <string name="utility_prompt">UTILITY TYPE:</string>
-
     <string-array name="utility_types">
         <item>GAS</item>
         <item>ELECTRIC</item>
     </string-array>
-
     <string name="meter_prompt">METER TYPE:</string>
-
     <string-array name="meter_types">
         <item>DIGITAL</item>
         <item>CLOCK DIAL</item>
     </string-array>
-
     <string name="units_prompt">METER UNITS:</string>
-
     <string-array name="meter_units">
         <item>METRIC</item>
         <item>IMPERIAL</item>
     </string-array>
+    
+    <!-- Base Meter Reading Modal Values -->
+    <string name="base_reading_title">TAKE BASELINE READING</string>
+    <string name="base_reading_description">Take a reading to let us know your meters current value.</string>
+    <string name="base_reading_bill_title">Get information from last bill.</string>
+    <string name="reading_date_prompt">Present Reading Date</string>
+    <string name="reading_date_txt">Set Date</string>
+    <string name="present_reading_prompt">Present Reading</string>
+    <string name="conversion_factor_prompt">Conversion Factor</string>
+    
     
     <!-- Settings -->
     <string name="household_info_header">ENTER HOUSEHOLD INFO</string>
@@ -67,15 +96,23 @@
     <string name="account_password_prompt">Password: </string>
     <string name="accountid_prompt">Account ID: </string>
     
+    <!-- Fragment tags -->
+    <string name="dashboard_tag">dashboard</string>
+    <string name="usage_tag">usage</string>
+    <string name="savings_tag">savings</string>
+    <string name="community_tag">community</string>
+    <string name="safety_tag">safety</string>
+    <string name="saving_tag">saving</string>
+    <string name="meter_tag">meter</string>
 
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
-        <item>Dashboard</item>
-        <item>Energy Usage</item>
-        <item>Energy Savings</item>
-        <item>My Hood</item>
-        <item>Safety Tips</item>
-        <item>Saving Tips</item>
+        <item><b>DASHBOARD</b></item>
+        <item><b>ENERGY USAGE</b></item>
+        <item><b>ENERGY SAVINGS</b></item>
+        <item><b>MY HOOD</b></item>
+        <item><b>SAFETY TIPS</b></item>
+        <item><b>SAVING TIPS</b></item>
     </string-array>
 
     <!-- Nav Drawer List Item Icons -->

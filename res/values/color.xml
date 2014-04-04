@@ -1,9 +1,10 @@
 <resources>
-
+    <color name="action_bar_text">#FAFAFA</color>
+	<color name="action_bar_background">#7AB331</color>
     <color name="black_overlay">#66000000</color>
     <color name="list_item_title">#fff</color>
-    <color name="list_background">#303030</color>
-    <color name="list_background_pressed">#992416</color>
+    <color name="list_background">#323C46</color>
+    <color name="list_background_pressed">#242628</color>
     <color name="list_divider">#272727</color>
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
@@ -29,5 +30,15 @@
     <color name="analog_meter_background">#D3D3D3</color>
     <color name="mini_meter_background">#535050</color>
     <color name="mini_meter_background_selected">#599753</color>
+    
+    <color name="dashboard_text_color">#6F5241</color>
+    
+    <color name="tab_bg_selected">#F9ECD5</color>
+    <color name="tab_bg_unselected">#BCA988</color>
+    <color name="tab_vis_mid_bg">#BCCA84</color>
+    <color name="tab_vis_bottom_bg">#86C9BC</color>
+    <color name="tab_vis_avg_household">#5F7696</color>
+    <color name="tab_vis_usage">#51B336</color>
+    <color name="tab_chart_bottom_bg">#CECAB0</color>
     
 </resources>

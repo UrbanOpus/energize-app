@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity" >
+    
+    <TextView 
+   	    android:id="@+id/base_reading_bill_title"
+   	    android:text="@string/base_reading_bill_title"
+   	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="250dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="20dp"/>  
+	
+    <LinearLayout
+  	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal"
+    	android:gravity="left"
+    	android:padding="10dp">
+    	<TextView 
+    	    android:id="@+id/reading_date_prompt"
+    	    android:text="@string/reading_date_prompt"
+    	    android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="80dp"/>   
+    	<TextView
+	        android:id="@+id/reading_date_txt"
+	        android:text="@string/reading_date_txt"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:minWidth="160dp"/>
+    </LinearLayout>
+    
+  	<LinearLayout
+  	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="left"
+    	android:padding="10dp">
+    	<TextView 
+    	    android:id="@+id/present_reading_prompt"
+    	    android:text="@string/present_reading_prompt"
+    	    android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="80dp"/> 
+		<EditText
+	        android:id="@+id/present_reading_txt"
+	        android:inputType="number"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:minWidth="160dp"/>
+	</LinearLayout>
+	
+  	<LinearLayout
+  	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="left"
+    	android:padding="10dp">
+    	<TextView 
+    	    android:id="@+id/conversion_factor_prompt"
+    	    android:text="@string/conversion_factor_prompt"
+    	    android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="80dp"/> 
+		<EditText
+	        android:id="@+id/conversion_factor"
+	        android:inputType="numberDecimal"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:minWidth="160dp"/>
+	</LinearLayout>
+	
+  	<LinearLayout
+  	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="left"
+    	android:padding="10dp">
+    	<Button
+	        android:id="@+id/from_bill_ok"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="25dp"
+	        android:text="@android:string/ok" />
+		<Button
+	        android:id="@+id/from_bill_cancel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="25dp"
+	        android:text="@android:string/cancel"/>
+	</LinearLayout>
+</LinearLayout>
