@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 	<item  
-	   	android:state_checked="true">
+	   	android:state_checked="true"
+	   	android:right="-50dp">
     	<shape>
             <solid
                 android:color="@color/btn_switch_gas" />
@@ -10,7 +11,7 @@
         </shape>
     </item>
 
-    <item android:left="5dp">
+    <item android:left="10dp">
         <bitmap
             android:gravity="left"
             android:src="@drawable/ic_toggle_gas" />

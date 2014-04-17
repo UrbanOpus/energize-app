@@ -34,10 +34,16 @@ public class SettingsActivity extends FragmentActivity implements HTTPClientList
 	private ProgressDialog mDialog;
 	AlertDialog.Builder alertBuilder;
 	
+	private boolean firstLogin;
+	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
+		// Get settings for activity
+		Intent intent = getIntent();
+		firstLogin = intent.getBooleanExtra("first-login", false);
+		
 		alertBuilder = new AlertDialog.Builder(this);
 		prefs = getApplicationContext().getSharedPreferences(getString(R.string.prefs_id), MODE_PRIVATE);
 		final View activityRootView = findViewById(R.id.frame_settings_container);
@@ -53,12 +59,28 @@ public class SettingsActivity extends FragmentActivity implements HTTPClientList
 		     }
 		});
 		
+		if(!firstLogin) {
+			//initializeSettings();
+		}
 		goToHouseholdSettings();
+	}
+	
+	@Override
+    public void onBackPressed() {
+    	FragmentManager fm = getSupportFragmentManager();
+	    if(fm.getBackStackEntryCount() > 1) {
+	    	super.onBackPressed();
+	    } else {
+	    	finish();
+	    }
 	}
 	
 	private void goToHouseholdSettings() {
 		HouseholdSettingsFragment fragment = new HouseholdSettingsFragment();
 		loadFragment(fragment, "household-settings-fragment");
+		if(!firstLogin) {
+			//EditText 
+		}
 	}
 	
 	private void goToConnectAccounts() {

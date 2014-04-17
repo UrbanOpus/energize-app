@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 	<item
-	    android:state_checked="true">
+	    android:state_checked="true"
+	    android:left="-50dp">
           <shape>
             <solid
                 android:color="@color/btn_switch_electricity" />

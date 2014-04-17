@@ -2,6 +2,8 @@ package com.magic.energize.ui;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,6 +45,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 	
 	private Toast toast;
     private long lastBackPressTime = 0;
+    private boolean verifyInputsFailed = false;
 	
 	
 	@Override
@@ -106,10 +109,53 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
     }
 	
     /** Called when the user touches the register button */
-	public void registerUser(View view) {
-		// hide keyboard
+    public void registerUserClicked(View view) {
+    	// hide keyboard
 		if(keyboard_open)
 			imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+		
+    	if(verifyInputs()) {
+    		registerUser();
+    	}
+    }
+    
+    private boolean verifyInputs() {
+    	 // get form data
+    	String fname = ((EditText)findViewById(R.id.first_name)).getText().toString();
+		String lname = ((EditText)findViewById(R.id.last_name)).getText().toString();
+		String email = ((EditText)findViewById(R.id.email_address)).getText().toString();
+		String password = ((EditText)findViewById(R.id.password)).getText().toString();
+		String password_confirm = ((EditText)findViewById(R.id.password_confirm)).getText().toString();
+    	
+		String errorText = "";
+    	if(fname.equals("")) {
+    		errorText = "First name required";
+    	} else if (lname.equals("")) { 
+    		errorText = "Last name required";
+    	} else if (!validateEmailAddress(email)) {
+    		errorText = "Valid email required.";
+    	} else if (password.length() < 6) {
+    		errorText = "Password must be at least 6 characters";
+    	} else if (!password.equals(password_confirm)) {
+    		errorText = "Password does not match.";
+    	}
+    	TextView errTxt = (TextView)findViewById(R.id.error_registration);
+		errTxt.setText(errorText);
+    	if(errorText.equals(""))
+    		return true;
+    	else
+    		return false;
+    }
+    
+    private boolean validateEmailAddress(String emailAddress){
+        String  expression="^[\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";  
+           CharSequence inputStr = emailAddress;  
+           Pattern pattern = Pattern.compile(expression,Pattern.CASE_INSENSITIVE);  
+           Matcher matcher = pattern.matcher(inputStr);  
+           return matcher.matches();
+    }
+    
+	public void registerUser() {
 	    
 		if(HTTPClient.isNetworkAvailable(this)) {
 		    // get form data
@@ -303,6 +349,7 @@ public class LoginActivity extends FragmentActivity implements HTTPClientListene
 	public void goToSettings() {
 		// Go back to settings activity
     	Intent i = new Intent(this, SettingsActivity.class);
+    	i.putExtra("first-login", true);
 		startActivity(i);
 	}
 	

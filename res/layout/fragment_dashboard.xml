@@ -25,7 +25,7 @@
 		    android:textOff="GAS"
 		    android:textSize="18sp"
 		    android:textStyle="bold"
-		    android:minHeight="15dp"
+		    android:minHeight="60dp"
 		    />
 
     </LinearLayout>

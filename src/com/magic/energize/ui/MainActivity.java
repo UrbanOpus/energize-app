@@ -4,6 +4,7 @@ package com.magic.energize.ui;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Stack;
 
 import com.magic.energize.R;
 import com.magic.energize.HTTPClient;
@@ -14,7 +15,7 @@ import com.magic.energize.fragments.CommunityFragment;
 import com.magic.energize.fragments.DashboardFragment;
 import com.magic.energize.fragments.EnergySavingsFragment;
 import com.magic.energize.fragments.EnergyUsageFragment;
-import com.magic.energize.fragments.ReadMeterFragment;
+//import com.magic.energize.fragments.ReadMeterFragment;
 import com.magic.energize.fragments.SafetyTipsFragment;
 import com.magic.energize.fragments.SavingTipsFragment;
 
@@ -82,6 +83,8 @@ public class MainActivity extends FragmentActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
+    private Stack<Integer> fragmentHistory;
+    private int lastFragment;
  
     // nav drawer title
     private CharSequence mDrawerTitle;
@@ -101,6 +104,8 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         prefs = getApplicationContext().getSharedPreferences(getString(R.string.prefs_id), MODE_PRIVATE);
         imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        fragmentHistory = new Stack<Integer>();
+        lastFragment = -1;
         
         if(prefs.getString(getString(R.string.login_token), null) == null && FORCE_LOGIN) {
     		Intent myIntent = new Intent(this, LoginActivity.class);
@@ -195,9 +200,21 @@ public class MainActivity extends FragmentActivity {
     @Override
     public void onBackPressed() {
     	FragmentManager fm = getSupportFragmentManager();
-	    if(fm.getBackStackEntryCount() > 0) {
+    	boolean prepExit = true;
+	    if(fm.getBackStackEntryCount() > 1) {
 	    	fm.popBackStack();
-	    } else {
+	    	if(fragmentHistory.size() > 0) {
+	    		lastFragment = fragmentHistory.pop();
+	    		setTitle(navMenuTitles[lastFragment]);
+//	    		TODO: remove history if back at dashboard
+//	    		if(lastFragment == 0) {
+//	    			fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+//	    		}
+	    	}
+	    	prepExit = false;
+	    }
+	    if(prepExit) {
+	    	
 	    	if (this.lastBackPressTime < System.currentTimeMillis() - 4000) {
 	    		toast = Toast.makeText(this, "Press back again to close this app", Toast.LENGTH_LONG);
 	    		toast.show();
@@ -409,6 +426,7 @@ public class MainActivity extends FragmentActivity {
 			@Override
 			public void onClick(View v) {
 				baseReading.cancel();
+				dialog.cancel();
 			}
     	});
     	baseReading.show();
@@ -472,11 +490,11 @@ public class MainActivity extends FragmentActivity {
         	break;
         case -2:
         	fragment = new RegistrationFragment();
-        	break;*/
+        	break;
         case -3:
         	fragment = new ReadMeterFragment();
         	fragment_tag = getString(R.string.meter_tag);
-        	break;
+        	break;*/
         default:
             break;
         }
@@ -485,17 +503,19 @@ public class MainActivity extends FragmentActivity {
         	loadFragment(fragment, fragment_tag);
  
             // update selected item and title, then close the drawer
-            if(position >= 0) {
-	            mDrawerList.setItemChecked(position, true);
-	            mDrawerList.setSelection(position);
-	            setTitle(navMenuTitles[position]);
-	            mDrawerLayout.closeDrawer(mDrawerList);
-	            getActionBar().setIcon(fragment_icon);
-            } else {
-            	mDrawerLayout.closeDrawer(mDrawerList);
-            	//mDrawerList.setClickable(false);
-            	//TODO: no allow drawer to be used
+            if(lastFragment > -1) {
+//            	Bundle lastView = new Bundle();
+//            	lastView.putString("current", navMenuTitles[lastFragment]);
+//            	lastView.putString(key, value)
+            	fragmentHistory.push(lastFragment);
             }
+            mDrawerList.setItemChecked(position, true);
+            mDrawerList.setSelection(position);
+            setTitle(navMenuTitles[position]);
+            mDrawerLayout.closeDrawer(mDrawerList);
+            getActionBar().setIcon(fragment_icon);
+            lastFragment = position;
+
         } else {
             // error in creating fragment
             Log.e(TAG, "Error in creating fragment");

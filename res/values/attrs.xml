@@ -1,3 +1,7 @@
 <resources>
-    
+    <declare-styleable name="GraphView">
+        <attr name="android:text"/>
+        <attr name="android:textColor"/>            
+        <attr name="extraInformation" format="string" />
+    </declare-styleable>
 </resources>

@@ -6,19 +6,6 @@
     <!-- <string name="energize_api_url">http://128.189.86.38:52673/api</string>-->
     <string name="energize_api_url">http://energize-server.herokuapp.com/api</string>
     
-   	<!-- Preference Strings -->
-	<string name="prefs_id">com.magic.urbanopis.energize</string>
-	<string name="login_token">token</string> <!-- Token to indicate if user is logged in -->
-	<string name="user_fname">fname</string> <!-- First name of user -->
-	<string name="user_lname">lname</string> <!-- Last name of user -->
-	<string name="user_email">email</string> <!-- email of user -->
-	<string name="base_reading">base-reading</string> <!-- Timestamp of first meter reading to base future readings off -->
-    <string name="last_reading">last-reading</string> <!-- Timestamp of last meter reading -->
-    <string name="gas_id">gas-account-id</string> <!-- ID of fortis gas account -->
-    <string name="gas_pass">gas-account-pass</string> <!-- password for fortis gas account -->
-    <string name="elec_id">electric-account-id</string> <!-- ID of electricity provider account -->
-    <string name="elec_pass">electric-account-pass</string> <!-- password for electricity provider account -->
-    <string name="conversion_factor">conversion-factor</string>
     
     <!-- Dashboard Page -->
     <string name="default_tl_title"><u>NO METER DATA</u></string>
@@ -45,6 +32,8 @@
     <!-- Registration Page -->
     <string name="register_title">Register an Account</string>
     <string name="password_confirm_hint">confirm password</string>
+    <string name="fname_hint">First Name</string>
+    <string name="lname_hint">Last Name</string>
 
     <!-- Read Meter Page -->
     <string name="read_meter_header">ENTER METER READING</string>
@@ -80,8 +69,12 @@
     <string name="household_info_description">Please provide your household info to help us understand your home energy usage.</string>
     <string name="home_type_prompt">METER UNITS:</string>
     <string-array name="home_types">
-        <item>Home Type 1</item>
-        <item>Home Type 2</item>
+        <item>Detached House</item>
+        <item>Duplex</item>
+        <item>Apartment</item>
+        <item>Basement/Garden Suit</item>
+        <item>Townhouse</item>
+        <item>Condo</item>
     </string-array>
     <string name="button_next">NEXT</string>
     

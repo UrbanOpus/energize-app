@@ -57,7 +57,7 @@
 					    android:layout_width="wrap_content"
 					    android:layout_height="wrap_content"
 					    android:minHeight="50dp"
-					    android:text="Number of Members:"
+					    android:text="No. in household:"
 					    android:textColor="@android:color/black"/>
 		            
 		            <TextView
@@ -111,6 +111,7 @@
 					    android:minWidth="100dp"
 					    android:minHeight="50dp"
 					    android:gravity="center"
+					    android:inputType="textPostalAddress"
 					    android:hint="" />
 		            
 		          	<Spinner

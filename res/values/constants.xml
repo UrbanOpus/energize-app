@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="tab_offset_vis">125dp</dimen>
+    
+    <!-- Preference Strings -->
+	<string name="prefs_id">com.magic.urbanopis.energize</string>
+	<string name="login_token">token</string> <!-- Token to indicate if user is logged in -->
+	<string name="user_fname">fname</string> <!-- First name of user -->
+	<string name="user_lname">lname</string> <!-- Last name of user -->
+	<string name="user_email">email</string> <!-- email of user -->
+	<string name="base_reading">base-reading</string> <!-- Timestamp of first meter reading to base future readings off -->
+    <string name="last_reading">last-reading</string> <!-- Timestamp of last meter reading -->
+    <string name="gas_id">gas-account-id</string> <!-- ID of fortis gas account -->
+    <string name="gas_pass">gas-account-pass</string> <!-- password for fortis gas account -->
+    <string name="elec_id">electric-account-id</string> <!-- ID of electricity provider account -->
+    <string name="elec_pass">electric-account-pass</string> <!-- password for electricity provider account -->
+    <string name="conversion_factor">conversion-factor</string>
 </resources>
